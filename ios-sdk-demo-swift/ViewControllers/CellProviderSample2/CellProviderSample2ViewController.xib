@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CellProviderSample2ViewController" customModule="ios_sdk_demo_swift" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="OVz-6a-nC0" id="sbM-B7-YlN"/>
+                <outlet property="view" destination="hQt-P1-9h2" id="8GY-Zo-O0r"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="hQt-P1-9h2">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OVz-6a-nC0">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="x0r-eU-TZx"/>
+                        <outlet property="delegate" destination="-1" id="xxh-Bn-4e6"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="OVz-6a-nC0" firstAttribute="width" secondItem="hQt-P1-9h2" secondAttribute="width" id="6Dd-vO-ojk"/>
+                <constraint firstItem="OVz-6a-nC0" firstAttribute="centerY" secondItem="hQt-P1-9h2" secondAttribute="centerY" id="HLV-3h-bLN"/>
+                <constraint firstItem="OVz-6a-nC0" firstAttribute="centerX" secondItem="hQt-P1-9h2" secondAttribute="centerX" id="Nyl-aG-naQ"/>
+                <constraint firstItem="OVz-6a-nC0" firstAttribute="height" secondItem="hQt-P1-9h2" secondAttribute="height" id="alo-kg-hCu"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+        </view>
+    </objects>
+</document>

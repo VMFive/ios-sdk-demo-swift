@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>sectionTitle</key>
+		<string>SDK Information</string>
+		<key>rows</key>
+		<array>
+			<dict>
+				<key>rowText</key>
+				<string>version</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>sectionTitle</key>
+		<string>Use nativeAd fit your design</string>
+		<key>rows</key>
+		<array>
+			<dict>
+				<key>rowText</key>
+				<string>NativeAdSample1</string>
+				<key>action</key>
+				<string>NativeAdSample1ViewController</string>
+			</dict>
+			<dict>
+				<key>rowText</key>
+				<string>NativeAdSample2</string>
+				<key>action</key>
+				<string>NativeAdSample2ViewController</string>
+			</dict>
+			<dict>
+				<key>rowText</key>
+				<string>NativeAdSample3 (without XIB)</string>
+				<key>action</key>
+				<string>NativeAdSample3ViewController</string>
+			</dict>
+			<dict>
+				<key>rowText</key>
+				<string>NativeAdSample4 (without icon)</string>
+				<key>action</key>
+				<string>NativeAdSample4ViewController</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>sectionTitle</key>
+		<string>Add ads in your tableview</string>
+		<key>rows</key>
+		<array>
+			<dict>
+				<key>rowText</key>
+				<string>CellProviderSample1</string>
+				<key>action</key>
+				<string>CellProviderSample1ViewController</string>
+			</dict>
+			<dict>
+				<key>rowText</key>
+				<string>CellProviderSample2 (without XIB)</string>
+				<key>action</key>
+				<string>CellProviderSample2ViewController</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>sectionTitle</key>
+		<string>Default styles we provide</string>
+		<key>rows</key>
+		<array>
+			<dict>
+				<key>rowText</key>
+				<string>BannerSample</string>
+				<key>action</key>
+				<string>BannerSampleViewController</string>
+			</dict>
+			<dict>
+				<key>rowText</key>
+				<string>CardSample</string>
+				<key>action</key>
+				<string>CardSampleViewController</string>
+			</dict>
+			<dict>
+				<key>rowText</key>
+				<string>InterstitialSample</string>
+				<key>action</key>
+				<string>InterstitialSampleViewController</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>
