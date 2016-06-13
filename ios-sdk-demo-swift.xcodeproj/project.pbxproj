@@ -28,6 +28,10 @@
 		1CAAE9F61CFC2A59003966A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAE9F51CFC2A59003966A0 /* AppDelegate.swift */; };
 		1CAAE9FD1CFC2A59003966A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CAAE9FC1CFC2A59003966A0 /* Assets.xcassets */; };
 		1CAAEA001CFC2A59003966A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CAAE9FE1CFC2A59003966A0 /* LaunchScreen.storyboard */; };
+		1CCD29241D0EA6B200655160 /* NativeAdSample5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCD29221D0EA6B200655160 /* NativeAdSample5ViewController.swift */; };
+		1CCD29251D0EA6B200655160 /* NativeAdSample5ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CCD29231D0EA6B200655160 /* NativeAdSample5ViewController.xib */; };
+		1CCD29281D0EAA6F00655160 /* YourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCD29261D0EAA6F00655160 /* YourCollectionViewCell.swift */; };
+		1CCD29291D0EAA6F00655160 /* YourCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CCD29271D0EAA6F00655160 /* YourCollectionViewCell.xib */; };
 		1CDB1BFB1CFD30F2004B3A46 /* NativeAdSample4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDB1BF91CFD30F2004B3A46 /* NativeAdSample4ViewController.swift */; };
 		1CDB1BFC1CFD30F2004B3A46 /* NativeAdSample4ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CDB1BFA1CFD30F2004B3A46 /* NativeAdSample4ViewController.xib */; };
 		1CDB1BFF1CFD319C004B3A46 /* VANativeAd+FullscreenIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDB1BFE1CFD319C004B3A46 /* VANativeAd+FullscreenIcon.m */; };
@@ -68,6 +72,10 @@
 		1CAAE9FC1CFC2A59003966A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CAAE9FF1CFC2A59003966A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CAAEA011CFC2A59003966A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CCD29221D0EA6B200655160 /* NativeAdSample5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdSample5ViewController.swift; sourceTree = "<group>"; };
+		1CCD29231D0EA6B200655160 /* NativeAdSample5ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdSample5ViewController.xib; sourceTree = "<group>"; };
+		1CCD29261D0EAA6F00655160 /* YourCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourCollectionViewCell.swift; sourceTree = "<group>"; };
+		1CCD29271D0EAA6F00655160 /* YourCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YourCollectionViewCell.xib; sourceTree = "<group>"; };
 		1CDB1BF91CFD30F2004B3A46 /* NativeAdSample4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdSample4ViewController.swift; sourceTree = "<group>"; };
 		1CDB1BFA1CFD30F2004B3A46 /* NativeAdSample4ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdSample4ViewController.xib; sourceTree = "<group>"; };
 		1CDB1BFD1CFD319C004B3A46 /* VANativeAd+FullscreenIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VANativeAd+FullscreenIcon.h"; sourceTree = "<group>"; };
@@ -139,6 +147,7 @@
 				1CE647CE1CFD0F050022E41D /* NativeAdSample2 */,
 				1CE647D81CFD280B0022E41D /* NativeAdSample3 */,
 				1CDB1BF81CFD30DE004B3A46 /* NativeAdSample4 */,
+				1CCD29211D0EA69700655160 /* NativeAdSample5 */,
 				1C0972B61CFD32C50025E052 /* CellProviderSample1 */,
 				1C0972BB1CFD4DD50025E052 /* CellProviderSample2 */,
 				1C78969A1CFC40AD003780D6 /* BannerSample */,
@@ -243,6 +252,17 @@
 				1CAAEA011CFC2A59003966A0 /* Info.plist */,
 			);
 			path = "ios-sdk-demo-swift";
+			sourceTree = "<group>";
+		};
+		1CCD29211D0EA69700655160 /* NativeAdSample5 */ = {
+			isa = PBXGroup;
+			children = (
+				1CCD29221D0EA6B200655160 /* NativeAdSample5ViewController.swift */,
+				1CCD29231D0EA6B200655160 /* NativeAdSample5ViewController.xib */,
+				1CCD29261D0EAA6F00655160 /* YourCollectionViewCell.swift */,
+				1CCD29271D0EAA6F00655160 /* YourCollectionViewCell.xib */,
+			);
+			path = NativeAdSample5;
 			sourceTree = "<group>";
 		};
 		1CDB1BF81CFD30DE004B3A46 /* NativeAdSample4 */ = {
@@ -380,7 +400,9 @@
 				1C7896911CFC2C31003780D6 /* MainViewController.xib in Resources */,
 				1C7896A31CFC4333003780D6 /* CardSampleViewController.xib in Resources */,
 				1CE647CB1CFD0C7A0022E41D /* SampleView2.xib in Resources */,
+				1CCD29291D0EAA6F00655160 /* YourCollectionViewCell.xib in Resources */,
 				1C085B371CFC99CF002308C5 /* SampleView1.xib in Resources */,
+				1CCD29251D0EA6B200655160 /* NativeAdSample5ViewController.xib in Resources */,
 				1CDB1BFC1CFD30F2004B3A46 /* NativeAdSample4ViewController.xib in Resources */,
 				1C0972BF1CFD4DEA0025E052 /* CellProviderSample2ViewController.xib in Resources */,
 				1CAAE9FD1CFC2A59003966A0 /* Assets.xcassets in Resources */,
@@ -450,6 +472,7 @@
 				1C7896991CFC3F99003780D6 /* NewController.m in Sources */,
 				1CE647D71CFD20FF0022E41D /* SampleView3.swift in Sources */,
 				1C085B351CFC99A8002308C5 /* SampleView1.swift in Sources */,
+				1CCD29241D0EA6B200655160 /* NativeAdSample5ViewController.swift in Sources */,
 				1C085B3B1CFC9B3E002308C5 /* NativeAdSample1ViewController.swift in Sources */,
 				1CDB1BFF1CFD319C004B3A46 /* VANativeAd+FullscreenIcon.m in Sources */,
 				1C7896A21CFC4333003780D6 /* CardSampleViewController.swift in Sources */,
@@ -458,6 +481,7 @@
 				1CDB1BFB1CFD30F2004B3A46 /* NativeAdSample4ViewController.swift in Sources */,
 				1C0972B91CFD32E40025E052 /* CellProviderSample1ViewController.swift in Sources */,
 				1CE647D11CFD0F230022E41D /* NativeAdSample2ViewController.swift in Sources */,
+				1CCD29281D0EAA6F00655160 /* YourCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

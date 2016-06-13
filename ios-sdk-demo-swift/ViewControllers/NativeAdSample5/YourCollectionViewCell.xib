@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YourCollectionViewCell" id="YQp-tY-rrz" customClass="YourCollectionViewCell" customModule="ios_sdk_demo_swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEk-RY-dHM">
+                        <rect key="frame" x="8" y="271" width="284" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="s6x-KD-h0Y"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sgI-iB-66F">
+                        <rect key="frame" x="8" y="8" width="284" height="255"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="vEk-RY-dHM" firstAttribute="leading" secondItem="YQp-tY-rrz" secondAttribute="leading" constant="8" id="HgJ-Sp-acI"/>
+                <constraint firstItem="sgI-iB-66F" firstAttribute="leading" secondItem="YQp-tY-rrz" secondAttribute="leading" constant="8" id="LGm-dt-u2X"/>
+                <constraint firstItem="vEk-RY-dHM" firstAttribute="top" secondItem="sgI-iB-66F" secondAttribute="bottom" constant="8" id="OcG-BT-FB0"/>
+                <constraint firstAttribute="trailing" secondItem="vEk-RY-dHM" secondAttribute="trailing" constant="8" id="PqY-0S-aW6"/>
+                <constraint firstItem="sgI-iB-66F" firstAttribute="centerX" secondItem="YQp-tY-rrz" secondAttribute="centerX" id="ZMY-kz-5qJ"/>
+                <constraint firstItem="sgI-iB-66F" firstAttribute="top" secondItem="YQp-tY-rrz" secondAttribute="top" constant="8" id="nWN-jk-bcX"/>
+                <constraint firstItem="vEk-RY-dHM" firstAttribute="top" secondItem="sgI-iB-66F" secondAttribute="bottom" constant="8" id="qa8-Sk-klW"/>
+                <constraint firstAttribute="bottom" secondItem="vEk-RY-dHM" secondAttribute="bottom" constant="8" id="qtf-Vq-liS"/>
+                <constraint firstAttribute="trailing" secondItem="sgI-iB-66F" secondAttribute="trailing" constant="8" id="x0c-yN-D3p"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="sgI-iB-66F" id="Hup-G5-8Z6"/>
+                <outlet property="textLabel" destination="vEk-RY-dHM" id="uaP-WA-Kek"/>
+            </connections>
+            <point key="canvasLocation" x="231" y="286"/>
+        </collectionViewCell>
+    </objects>
+</document>
