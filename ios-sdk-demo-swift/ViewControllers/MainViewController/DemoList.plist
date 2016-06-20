@@ -48,6 +48,12 @@
 				<key>action</key>
 				<string>NativeAdSample5ViewController</string>
 			</dict>
+			<dict>
+				<key>rowText</key>
+				<string>NativeAdSample6 (TopOfScreen)</string>
+				<key>action</key>
+				<string>NativeAdSample6ViewController</string>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -91,6 +97,12 @@
 				<string>InterstitialSample</string>
 				<key>action</key>
 				<string>InterstitialSampleViewController</string>
+			</dict>
+			<dict>
+				<key>rowText</key>
+				<string>RewardedVideoSample</string>
+				<key>action</key>
+				<string>RewardedVideoSampleViewController</string>
 			</dict>
 		</array>
 	</dict>

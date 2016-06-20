@@ -15,6 +15,12 @@
 		1C0972BA1CFD32E40025E052 /* CellProviderSample1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0972B81CFD32E40025E052 /* CellProviderSample1ViewController.xib */; };
 		1C0972BE1CFD4DEA0025E052 /* CellProviderSample2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0972BC1CFD4DEA0025E052 /* CellProviderSample2ViewController.swift */; };
 		1C0972BF1CFD4DEA0025E052 /* CellProviderSample2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0972BD1CFD4DEA0025E052 /* CellProviderSample2ViewController.xib */; };
+		1C1A980F1D17884E00287E2F /* NativeAdSample6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A980D1D17884E00287E2F /* NativeAdSample6ViewController.swift */; };
+		1C1A98101D17884E00287E2F /* NativeAdSample6ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C1A980E1D17884E00287E2F /* NativeAdSample6ViewController.xib */; };
+		1C1A98131D1788CD00287E2F /* SampleView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98121D1788CD00287E2F /* SampleView4.swift */; };
+		1C1A98151D1788DC00287E2F /* SampleView4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C1A98141D1788DC00287E2F /* SampleView4.xib */; };
+		1C1A98191D17961600287E2F /* RewardedVideoSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98171D17961600287E2F /* RewardedVideoSampleViewController.swift */; };
+		1C1A981A1D17961600287E2F /* RewardedVideoSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C1A98181D17961600287E2F /* RewardedVideoSampleViewController.xib */; };
 		1C7896901CFC2C31003780D6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C78968E1CFC2C31003780D6 /* MainViewController.swift */; };
 		1C7896911CFC2C31003780D6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C78968F1CFC2C31003780D6 /* MainViewController.xib */; };
 		1C7896931CFC2F4E003780D6 /* DemoList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C7896921CFC2F4E003780D6 /* DemoList.plist */; };
@@ -55,6 +61,12 @@
 		1C0972B81CFD32E40025E052 /* CellProviderSample1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellProviderSample1ViewController.xib; sourceTree = "<group>"; };
 		1C0972BC1CFD4DEA0025E052 /* CellProviderSample2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellProviderSample2ViewController.swift; sourceTree = "<group>"; };
 		1C0972BD1CFD4DEA0025E052 /* CellProviderSample2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellProviderSample2ViewController.xib; sourceTree = "<group>"; };
+		1C1A980D1D17884E00287E2F /* NativeAdSample6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdSample6ViewController.swift; sourceTree = "<group>"; };
+		1C1A980E1D17884E00287E2F /* NativeAdSample6ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdSample6ViewController.xib; sourceTree = "<group>"; };
+		1C1A98121D1788CD00287E2F /* SampleView4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleView4.swift; sourceTree = "<group>"; };
+		1C1A98141D1788DC00287E2F /* SampleView4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleView4.xib; sourceTree = "<group>"; };
+		1C1A98171D17961600287E2F /* RewardedVideoSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardedVideoSampleViewController.swift; sourceTree = "<group>"; };
+		1C1A98181D17961600287E2F /* RewardedVideoSampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RewardedVideoSampleViewController.xib; sourceTree = "<group>"; };
 		1C78968E1CFC2C31003780D6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1C78968F1CFC2C31003780D6 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		1C7896921CFC2F4E003780D6 /* DemoList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DemoList.plist; sourceTree = "<group>"; };
@@ -139,6 +151,33 @@
 			path = CellProviderSample2;
 			sourceTree = "<group>";
 		};
+		1C1A980C1D17882F00287E2F /* NativeAdSample6 */ = {
+			isa = PBXGroup;
+			children = (
+				1C1A980D1D17884E00287E2F /* NativeAdSample6ViewController.swift */,
+				1C1A980E1D17884E00287E2F /* NativeAdSample6ViewController.xib */,
+			);
+			path = NativeAdSample6;
+			sourceTree = "<group>";
+		};
+		1C1A98111D1788B200287E2F /* SampleView4 */ = {
+			isa = PBXGroup;
+			children = (
+				1C1A98121D1788CD00287E2F /* SampleView4.swift */,
+				1C1A98141D1788DC00287E2F /* SampleView4.xib */,
+			);
+			path = SampleView4;
+			sourceTree = "<group>";
+		};
+		1C1A98161D1795D700287E2F /* RewardedVideoSample */ = {
+			isa = PBXGroup;
+			children = (
+				1C1A98171D17961600287E2F /* RewardedVideoSampleViewController.swift */,
+				1C1A98181D17961600287E2F /* RewardedVideoSampleViewController.xib */,
+			);
+			path = RewardedVideoSample;
+			sourceTree = "<group>";
+		};
 		1C78968C1CFC2C08003780D6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,11 +187,13 @@
 				1CE647D81CFD280B0022E41D /* NativeAdSample3 */,
 				1CDB1BF81CFD30DE004B3A46 /* NativeAdSample4 */,
 				1CCD29211D0EA69700655160 /* NativeAdSample5 */,
+				1C1A980C1D17882F00287E2F /* NativeAdSample6 */,
 				1C0972B61CFD32C50025E052 /* CellProviderSample1 */,
 				1C0972BB1CFD4DD50025E052 /* CellProviderSample2 */,
 				1C78969A1CFC40AD003780D6 /* BannerSample */,
 				1C78969F1CFC431C003780D6 /* CardSample */,
 				1C7896A41CFC4416003780D6 /* InterstitialSample */,
+				1C1A98161D1795D700287E2F /* RewardedVideoSample */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -217,6 +258,7 @@
 				1C085B331CFC998F002308C5 /* SampleView1 */,
 				1CE647C91CFD0C7A0022E41D /* SampleView2 */,
 				1CE647D31CFD20BB0022E41D /* SampleView3 */,
+				1C1A98111D1788B200287E2F /* SampleView4 */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -363,6 +405,7 @@
 				TargetAttributes = {
 					1CAAE9F11CFC2A58003966A0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -389,6 +432,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C1A98151D1788DC00287E2F /* SampleView4.xib in Resources */,
 				1C78969E1CFC40E6003780D6 /* BannerSampleViewController.xib in Resources */,
 				1C0972BA1CFD32E40025E052 /* CellProviderSample1ViewController.xib in Resources */,
 				1CAAEA001CFC2A59003966A0 /* LaunchScreen.storyboard in Resources */,
@@ -398,7 +442,9 @@
 				1CE647D21CFD0F230022E41D /* NativeAdSample2ViewController.xib in Resources */,
 				1C7896931CFC2F4E003780D6 /* DemoList.plist in Resources */,
 				1C7896911CFC2C31003780D6 /* MainViewController.xib in Resources */,
+				1C1A98101D17884E00287E2F /* NativeAdSample6ViewController.xib in Resources */,
 				1C7896A31CFC4333003780D6 /* CardSampleViewController.xib in Resources */,
+				1C1A981A1D17961600287E2F /* RewardedVideoSampleViewController.xib in Resources */,
 				1CE647CB1CFD0C7A0022E41D /* SampleView2.xib in Resources */,
 				1CCD29291D0EAA6F00655160 /* YourCollectionViewCell.xib in Resources */,
 				1C085B371CFC99CF002308C5 /* SampleView1.xib in Resources */,
@@ -468,6 +514,7 @@
 				1CE647CD1CFD0C920022E41D /* SampleView2.swift in Sources */,
 				1C78969D1CFC40E6003780D6 /* BannerSampleViewController.swift in Sources */,
 				1CE647DB1CFD28260022E41D /* NativeAdSample3ViewController.swift in Sources */,
+				1C1A980F1D17884E00287E2F /* NativeAdSample6ViewController.swift in Sources */,
 				1CAAE9F61CFC2A59003966A0 /* AppDelegate.swift in Sources */,
 				1C7896991CFC3F99003780D6 /* NewController.m in Sources */,
 				1CE647D71CFD20FF0022E41D /* SampleView3.swift in Sources */,
@@ -476,8 +523,10 @@
 				1C085B3B1CFC9B3E002308C5 /* NativeAdSample1ViewController.swift in Sources */,
 				1CDB1BFF1CFD319C004B3A46 /* VANativeAd+FullscreenIcon.m in Sources */,
 				1C7896A21CFC4333003780D6 /* CardSampleViewController.swift in Sources */,
+				1C1A98131D1788CD00287E2F /* SampleView4.swift in Sources */,
 				1C7896A71CFC4429003780D6 /* InterstitialSampleViewController.swift in Sources */,
 				1C7896901CFC2C31003780D6 /* MainViewController.swift in Sources */,
+				1C1A98191D17961600287E2F /* RewardedVideoSampleViewController.swift in Sources */,
 				1CDB1BFB1CFD30F2004B3A46 /* NativeAdSample4ViewController.swift in Sources */,
 				1C0972B91CFD32E40025E052 /* CellProviderSample1ViewController.swift in Sources */,
 				1CE647D11CFD0F230022E41D /* NativeAdSample2ViewController.swift in Sources */,
@@ -593,6 +642,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "tw.daidouji.ios-sdk-demo-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ios-sdk-demo-swift/Bridging.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -607,6 +657,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "tw.daidouji.ios-sdk-demo-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ios-sdk-demo-swift/Bridging.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

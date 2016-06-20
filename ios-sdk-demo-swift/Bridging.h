@@ -7,5 +7,6 @@
 //
 
 #import <VMFiveAdNetwork/VMFiveAdNetwork.h>
+#import <VMFiveAdNetwork/VAAdRewardedVideo.h>
 #import "NewController.h"
 #import "VANativeAd+FullscreenIcon.h"

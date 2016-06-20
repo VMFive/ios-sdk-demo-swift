@@ -1,10 +1,10 @@
 PODS:
-  - VMFiveAdNetwork (2.1.3)
+  - VMFiveAdNetwork (2.1.5)
 
 DEPENDENCIES:
-  - VMFiveAdNetwork (~> 2.1.3)
+  - VMFiveAdNetwork (~> 2.1.5)
 
 SPEC CHECKSUMS:
-  VMFiveAdNetwork: b424f48e19136282f269ff0c080fb06cfe60cc94
+  VMFiveAdNetwork: c5b4d8d46b49d7c270d80337dfedad711dfcb0d4
 
 COCOAPODS: 0.39.0
