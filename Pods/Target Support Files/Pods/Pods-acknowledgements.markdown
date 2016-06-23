@@ -1,6 +1,10 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## GoogleMobileAds
+
+Copyright 2011 Google Inc. All Rights Reserved.
+
 ## VMFiveAdNetwork
 
                                  Apache License

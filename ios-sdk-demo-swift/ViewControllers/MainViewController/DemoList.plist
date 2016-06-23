@@ -106,5 +106,24 @@
 			</dict>
 		</array>
 	</dict>
+	<dict>
+		<key>sectionTitle</key>
+		<string>AdMob</string>
+		<key>rows</key>
+		<array>
+			<dict>
+				<key>rowText</key>
+				<string>BannerSample</string>
+				<key>action</key>
+				<string>AdMobBannerSampleViewController</string>
+			</dict>
+			<dict>
+				<key>rowText</key>
+				<string>InterstitialSample</string>
+				<key>action</key>
+				<string>AdMobInterstitialSampleViewController</string>
+			</dict>
+		</array>
+	</dict>
 </array>
 </plist>

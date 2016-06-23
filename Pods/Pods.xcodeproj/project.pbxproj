@@ -24,7 +24,7 @@
 				</array>
 			</dict>
 		</dict>
-		<key>18BD83734E8583A80195A69B933074ED</key>
+		<key>0C707FDF98B0B4982148E445F4CBF12B</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -33,9 +33,24 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>VAAdInterstitial.h</string>
+			<string>VANativeAd.h</string>
 			<key>path</key>
-			<string>VMFiveAdNetwork/VMFiveAdNetwork/VAAdInterstitial.h</string>
+			<string>VMFiveAdNetwork/VMFiveAdNetwork/VANativeAd.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>144CECC4F874BE2988D4D669E88C2C8B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>VAAdRewardedVideo.h</string>
+			<key>path</key>
+			<string>VMFiveAdNetwork/VMFiveAdNetwork/VAAdRewardedVideo.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -63,21 +78,6 @@
 			<string>BB5D32B5D8FFDA27126FB97ADA2F84CF</string>
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>1D2AC5B54045DD4C3A225704ADBDD561</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>VAAdRewardedVideo.h</string>
-			<key>path</key>
-			<string>VMFiveAdNetwork/VMFiveAdNetwork/VAAdRewardedVideo.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>1E615E9CA3F7C983E82758A5B9F64D21</key>
 		<dict>
@@ -126,7 +126,7 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>3975FFA821E0F930A34B78714DC17B81</key>
+		<key>3A02EA0FBF024D5E3AD9AB20B5BFC059</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -154,14 +154,7 @@
 			<key>sourceTree</key>
 			<string>DEVELOPER_DIR</string>
 		</dict>
-		<key>4F53192D75EB99D6C9B6BE7F2A55ECD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3E4E89230EF59BC255123B67864ACF77</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>53D9B824945600460D7254DD0EC48250</key>
+		<key>41BEB6A8B6EF46C903D8270002063D65</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -170,9 +163,84 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>VMFiveAdNetwork.h</string>
+			<string>VAAdInterstitial.h</string>
 			<key>path</key>
-			<string>VMFiveAdNetwork/VMFiveAdNetwork/VMFiveAdNetwork.h</string>
+			<string>VMFiveAdNetwork/VMFiveAdNetwork/VAAdInterstitial.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>41E69B9F14C8AEBADBCBA8AC97D3D500</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>532B709D767D1B38217FBAC8C9B07257</string>
+				<string>890F004C310C1F5ABAE5F64BDF35100F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>437BDB43178C1CDFE58553B86B3C7FEA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7E7F37BA5862B913C77E90DA9B4EA2EE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4C96B7CA9E961DF0FB9532354D705E8A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>GoogleMobileAds.framework</string>
+			<key>path</key>
+			<string>Frameworks/GoogleMobileAds.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4F53192D75EB99D6C9B6BE7F2A55ECD7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E4E89230EF59BC255123B67864ACF77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>532B709D767D1B38217FBAC8C9B07257</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5968B3FAC55E573467DA7193A251A6D2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>GoogleMobileAds</string>
+			<key>path</key>
+			<string>GoogleMobileAds</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5968B3FAC55E573467DA7193A251A6D2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4C96B7CA9E961DF0FB9532354D705E8A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -261,29 +329,6 @@
 			<string>XCBuildConfiguration</string>
 			<key>name</key>
 			<string>Debug</string>
-		</dict>
-		<key>6CB21C806C6DD37DF1F02ADEF0512C9B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7CD8C60DC5E4B35B111E3A595B7CF7F5</string>
-				<string>18BD83734E8583A80195A69B933074ED</string>
-				<string>1D2AC5B54045DD4C3A225704ADBDD561</string>
-				<string>83BF0BE660927122F36AC9A7C9A483CC</string>
-				<string>DBC491CCACEB36FBF7697C3441300518</string>
-				<string>B82AD23FB3B29D566478A42CE6F82879</string>
-				<string>3975FFA821E0F930A34B78714DC17B81</string>
-				<string>53D9B824945600460D7254DD0EC48250</string>
-				<string>780C13B082623446A5EFCF7109DCCE15</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>VMFiveAdNetwork</string>
-			<key>path</key>
-			<string>VMFiveAdNetwork</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>74857149DC1E0D599B8A01A78349A926</key>
 		<dict>
@@ -377,19 +422,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>780C13B082623446A5EFCF7109DCCE15</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B0B7F9DC226B53AFF44DCC6AF3E93588</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>79A9DEDC89FE8336BF5FEDAAF75BF7FC</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -463,7 +495,37 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>7CD8C60DC5E4B35B111E3A595B7CF7F5</key>
+		<key>7DB346D0F39D3F0E887471402A8071AB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
+				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
+				<string>41E69B9F14C8AEBADBCBA8AC97D3D500</string>
+				<string>1F65C4CD40C947C4415F8D28536735CC</string>
+				<string>B7B80995527643776607AFFA75B91E24</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E7F37BA5862B913C77E90DA9B4EA2EE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libVMFiveAdNetwork.a</string>
+			<key>path</key>
+			<string>VMFiveAdNetwork/libVMFiveAdNetwork.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>80DBF15BABD2375BD2EE97CF03629505</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -472,24 +534,9 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>VAAdCellProvider.h</string>
+			<string>VAAdView.h</string>
 			<key>path</key>
-			<string>VMFiveAdNetwork/VMFiveAdNetwork/VAAdCellProvider.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7DB346D0F39D3F0E887471402A8071AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
-				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
-				<string>C3BC7BAB771D335BB7E001B8AA4EFDE6</string>
-				<string>1F65C4CD40C947C4415F8D28536735CC</string>
-				<string>B7B80995527643776607AFFA75B91E24</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>VMFiveAdNetwork/VMFiveAdNetwork/VAAdView.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -555,21 +602,6 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>83BF0BE660927122F36AC9A7C9A483CC</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>VAAdView.h</string>
-			<key>path</key>
-			<string>VMFiveAdNetwork/VMFiveAdNetwork/VAAdView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>87B213035BAC5F75386F62D3C75D2342</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -580,6 +612,29 @@
 			<string>text.plist.xml</string>
 			<key>path</key>
 			<string>Pods-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>890F004C310C1F5ABAE5F64BDF35100F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AF776B39356E2C2C0BEC690722CAD9F6</string>
+				<string>41BEB6A8B6EF46C903D8270002063D65</string>
+				<string>144CECC4F874BE2988D4D669E88C2C8B</string>
+				<string>80DBF15BABD2375BD2EE97CF03629505</string>
+				<string>0C707FDF98B0B4982148E445F4CBF12B</string>
+				<string>D94C2012E475771A7EA48FF95ADCC386</string>
+				<string>3A02EA0FBF024D5E3AD9AB20B5BFC059</string>
+				<string>B37850ED0ACC9B3B4DD21006D46DDF2B</string>
+				<string>437BDB43178C1CDFE58553B86B3C7FEA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>VMFiveAdNetwork</string>
+			<key>path</key>
+			<string>VMFiveAdNetwork</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -622,18 +677,33 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>B0B7F9DC226B53AFF44DCC6AF3E93588</key>
+		<key>AF776B39356E2C2C0BEC690722CAD9F6</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>libVMFiveAdNetwork.a</string>
+			<string>VAAdCellProvider.h</string>
 			<key>path</key>
-			<string>VMFiveAdNetwork/libVMFiveAdNetwork.a</string>
+			<string>VMFiveAdNetwork/VMFiveAdNetwork/VAAdCellProvider.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B37850ED0ACC9B3B4DD21006D46DDF2B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>VMFiveAdNetwork.h</string>
+			<key>path</key>
+			<string>VMFiveAdNetwork/VMFiveAdNetwork/VMFiveAdNetwork.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -647,21 +717,6 @@
 			<string>PBXGroup</string>
 			<key>name</key>
 			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B82AD23FB3B29D566478A42CE6F82879</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>VANativeAdViewRender.h</string>
-			<key>path</key>
-			<string>VMFiveAdNetwork/VMFiveAdNetwork/VANativeAdViewRender.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -720,19 +775,6 @@
 			<string>PBXGroup</string>
 			<key>name</key>
 			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C3BC7BAB771D335BB7E001B8AA4EFDE6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6CB21C806C6DD37DF1F02ADEF0512C9B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -800,6 +842,21 @@
 				<string>1BA84416B19DF31967CCD7D02D962E49</string>
 			</array>
 		</dict>
+		<key>D94C2012E475771A7EA48FF95ADCC386</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>VANativeAdViewRender.h</string>
+			<key>path</key>
+			<string>VMFiveAdNetwork/VMFiveAdNetwork/VANativeAdViewRender.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>DA312349A49333542E6F4B36B329960E</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -810,21 +867,6 @@
 			<string>text.xcconfig</string>
 			<key>path</key>
 			<string>Pods.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DBC491CCACEB36FBF7697C3441300518</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>VANativeAd.h</string>
-			<key>path</key>
-			<string>VMFiveAdNetwork/VMFiveAdNetwork/VANativeAd.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>

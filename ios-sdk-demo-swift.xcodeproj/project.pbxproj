@@ -21,6 +21,11 @@
 		1C1A98151D1788DC00287E2F /* SampleView4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C1A98141D1788DC00287E2F /* SampleView4.xib */; };
 		1C1A98191D17961600287E2F /* RewardedVideoSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98171D17961600287E2F /* RewardedVideoSampleViewController.swift */; };
 		1C1A981A1D17961600287E2F /* RewardedVideoSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C1A98181D17961600287E2F /* RewardedVideoSampleViewController.xib */; };
+		1C258B131D1B72FA0078E6B8 /* libVMFiveAdMobAdapter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C258B0F1D1B72FA0078E6B8 /* libVMFiveAdMobAdapter.a */; };
+		1C258B171D1B74960078E6B8 /* AdMobBannerSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C258B151D1B74960078E6B8 /* AdMobBannerSampleViewController.swift */; };
+		1C258B181D1B74960078E6B8 /* AdMobBannerSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C258B161D1B74960078E6B8 /* AdMobBannerSampleViewController.xib */; };
+		1C3ABBEB1D1B79150056B899 /* AdMobInterstitialSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3ABBE91D1B79150056B899 /* AdMobInterstitialSampleViewController.swift */; };
+		1C3ABBEC1D1B79150056B899 /* AdMobInterstitialSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C3ABBEA1D1B79150056B899 /* AdMobInterstitialSampleViewController.xib */; };
 		1C7896901CFC2C31003780D6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C78968E1CFC2C31003780D6 /* MainViewController.swift */; };
 		1C7896911CFC2C31003780D6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C78968F1CFC2C31003780D6 /* MainViewController.xib */; };
 		1C7896931CFC2F4E003780D6 /* DemoList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C7896921CFC2F4E003780D6 /* DemoList.plist */; };
@@ -67,6 +72,13 @@
 		1C1A98141D1788DC00287E2F /* SampleView4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleView4.xib; sourceTree = "<group>"; };
 		1C1A98171D17961600287E2F /* RewardedVideoSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardedVideoSampleViewController.swift; sourceTree = "<group>"; };
 		1C1A98181D17961600287E2F /* RewardedVideoSampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RewardedVideoSampleViewController.xib; sourceTree = "<group>"; };
+		1C258B0F1D1B72FA0078E6B8 /* libVMFiveAdMobAdapter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libVMFiveAdMobAdapter.a; sourceTree = "<group>"; };
+		1C258B111D1B72FA0078E6B8 /* VMFiveCustomBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMFiveCustomBanner.h; sourceTree = "<group>"; };
+		1C258B121D1B72FA0078E6B8 /* VMFiveCustomInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMFiveCustomInterstitial.h; sourceTree = "<group>"; };
+		1C258B151D1B74960078E6B8 /* AdMobBannerSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobBannerSampleViewController.swift; sourceTree = "<group>"; };
+		1C258B161D1B74960078E6B8 /* AdMobBannerSampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdMobBannerSampleViewController.xib; sourceTree = "<group>"; };
+		1C3ABBE91D1B79150056B899 /* AdMobInterstitialSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobInterstitialSampleViewController.swift; sourceTree = "<group>"; };
+		1C3ABBEA1D1B79150056B899 /* AdMobInterstitialSampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdMobInterstitialSampleViewController.xib; sourceTree = "<group>"; };
 		1C78968E1CFC2C31003780D6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1C78968F1CFC2C31003780D6 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		1C7896921CFC2F4E003780D6 /* DemoList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DemoList.plist; sourceTree = "<group>"; };
@@ -108,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C258B131D1B72FA0078E6B8 /* libVMFiveAdMobAdapter.a in Frameworks */,
 				FA6110C32CCC75D8332EB73D /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +191,42 @@
 			path = RewardedVideoSample;
 			sourceTree = "<group>";
 		};
+		1C258B0E1D1B72FA0078E6B8 /* VMFiveAdMobAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				1C258B0F1D1B72FA0078E6B8 /* libVMFiveAdMobAdapter.a */,
+				1C258B101D1B72FA0078E6B8 /* VMFiveAdMobAdapter */,
+			);
+			path = VMFiveAdMobAdapter;
+			sourceTree = "<group>";
+		};
+		1C258B101D1B72FA0078E6B8 /* VMFiveAdMobAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				1C258B111D1B72FA0078E6B8 /* VMFiveCustomBanner.h */,
+				1C258B121D1B72FA0078E6B8 /* VMFiveCustomInterstitial.h */,
+			);
+			path = VMFiveAdMobAdapter;
+			sourceTree = "<group>";
+		};
+		1C258B141D1B74760078E6B8 /* AdMobBannerSample */ = {
+			isa = PBXGroup;
+			children = (
+				1C258B151D1B74960078E6B8 /* AdMobBannerSampleViewController.swift */,
+				1C258B161D1B74960078E6B8 /* AdMobBannerSampleViewController.xib */,
+			);
+			path = AdMobBannerSample;
+			sourceTree = "<group>";
+		};
+		1C3ABBE81D1B78FD0056B899 /* AdMobInterstitialSample */ = {
+			isa = PBXGroup;
+			children = (
+				1C3ABBE91D1B79150056B899 /* AdMobInterstitialSampleViewController.swift */,
+				1C3ABBEA1D1B79150056B899 /* AdMobInterstitialSampleViewController.xib */,
+			);
+			path = AdMobInterstitialSample;
+			sourceTree = "<group>";
+		};
 		1C78968C1CFC2C08003780D6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +243,8 @@
 				1C78969F1CFC431C003780D6 /* CardSample */,
 				1C7896A41CFC4416003780D6 /* InterstitialSample */,
 				1C1A98161D1795D700287E2F /* RewardedVideoSample */,
+				1C258B141D1B74760078E6B8 /* AdMobBannerSample */,
+				1C3ABBE81D1B78FD0056B899 /* AdMobInterstitialSample */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -212,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				1C7896961CFC3F7E003780D6 /* NewController */,
+				1C258B0E1D1B72FA0078E6B8 /* VMFiveAdMobAdapter */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -445,6 +497,8 @@
 				1C1A98101D17884E00287E2F /* NativeAdSample6ViewController.xib in Resources */,
 				1C7896A31CFC4333003780D6 /* CardSampleViewController.xib in Resources */,
 				1C1A981A1D17961600287E2F /* RewardedVideoSampleViewController.xib in Resources */,
+				1C258B181D1B74960078E6B8 /* AdMobBannerSampleViewController.xib in Resources */,
+				1C3ABBEC1D1B79150056B899 /* AdMobInterstitialSampleViewController.xib in Resources */,
 				1CE647CB1CFD0C7A0022E41D /* SampleView2.xib in Resources */,
 				1CCD29291D0EAA6F00655160 /* YourCollectionViewCell.xib in Resources */,
 				1C085B371CFC99CF002308C5 /* SampleView1.xib in Resources */,
@@ -512,10 +566,12 @@
 			files = (
 				1C0972BE1CFD4DEA0025E052 /* CellProviderSample2ViewController.swift in Sources */,
 				1CE647CD1CFD0C920022E41D /* SampleView2.swift in Sources */,
+				1C258B171D1B74960078E6B8 /* AdMobBannerSampleViewController.swift in Sources */,
 				1C78969D1CFC40E6003780D6 /* BannerSampleViewController.swift in Sources */,
 				1CE647DB1CFD28260022E41D /* NativeAdSample3ViewController.swift in Sources */,
 				1C1A980F1D17884E00287E2F /* NativeAdSample6ViewController.swift in Sources */,
 				1CAAE9F61CFC2A59003966A0 /* AppDelegate.swift in Sources */,
+				1C3ABBEB1D1B79150056B899 /* AdMobInterstitialSampleViewController.swift in Sources */,
 				1C7896991CFC3F99003780D6 /* NewController.m in Sources */,
 				1CE647D71CFD20FF0022E41D /* SampleView3.swift in Sources */,
 				1C085B351CFC99A8002308C5 /* SampleView1.swift in Sources */,
@@ -639,6 +695,10 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "ios-sdk-demo-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ios-sdk-demo-swift/Models/VMFiveAdMobAdapter",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tw.daidouji.ios-sdk-demo-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ios-sdk-demo-swift/Bridging.h";
@@ -654,6 +714,10 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "ios-sdk-demo-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ios-sdk-demo-swift/Models/VMFiveAdMobAdapter",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tw.daidouji.ios-sdk-demo-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ios-sdk-demo-swift/Bridging.h";

@@ -9,3 +9,5 @@
 #import <VMFiveAdNetwork/VMFiveAdNetwork.h>
 #import "NewController.h"
 #import "VANativeAd+FullscreenIcon.h"
+#import "VMFiveCustomBanner.h"
+#import "VMFiveCustomInterstitial.h"
