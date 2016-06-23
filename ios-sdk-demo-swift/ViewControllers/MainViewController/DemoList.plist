@@ -125,5 +125,24 @@
 			</dict>
 		</array>
 	</dict>
+	<dict>
+		<key>sectionTitle</key>
+		<string>MoPub</string>
+		<key>rows</key>
+		<array>
+			<dict>
+				<key>rowText</key>
+				<string>InterstitialSample</string>
+				<key>action</key>
+				<string>MoPubInterstitialSampleViewController</string>
+			</dict>
+			<dict>
+				<key>rowText</key>
+				<string>NativeAd</string>
+				<key>action</key>
+				<string>MoPubNativeAdSampleViewController</string>
+			</dict>
+		</array>
+	</dict>
 </array>
 </plist>

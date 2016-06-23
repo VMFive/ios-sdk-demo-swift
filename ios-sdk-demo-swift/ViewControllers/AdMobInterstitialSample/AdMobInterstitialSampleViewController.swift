@@ -12,6 +12,7 @@ import GoogleMobileAds
 extension AdMobInterstitialSampleViewController: GADInterstitialDelegate {
     
     func interstitialDidReceiveAd(ad: GADInterstitial!) {
+        print("\(#function)")
         ad.presentFromRootViewController(self)
     }
     
@@ -20,6 +21,7 @@ extension AdMobInterstitialSampleViewController: GADInterstitialDelegate {
     }
     
     func interstitialDidDismissScreen(ad: GADInterstitial!) {
+        print("\(#function)")
         if let safeNavigation = self.navigationController {
             safeNavigation.popViewControllerAnimated(true)
         }
