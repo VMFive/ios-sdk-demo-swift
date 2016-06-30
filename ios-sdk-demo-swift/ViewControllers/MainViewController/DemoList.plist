@@ -54,6 +54,12 @@
 				<key>action</key>
 				<string>NativeAdSample6ViewController</string>
 			</dict>
+			<dict>
+				<key>rowText</key>
+				<string>NativeAdSample7 (ScrollView)</string>
+				<key>action</key>
+				<string>NativeAdSample7ViewController</string>
+			</dict>
 		</array>
 	</dict>
 	<dict>

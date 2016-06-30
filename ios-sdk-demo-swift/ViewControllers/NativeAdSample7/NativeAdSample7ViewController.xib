@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NativeAdSample7ViewController" customModule="ios_sdk_demo_swift" customModuleProvider="target">
+            <connections>
+                <outlet property="adContainView" destination="gm0-Gr-ntp" id="jXy-XX-a4Z"/>
+                <outlet property="imageView" destination="Urk-7f-D8w" id="9aY-FT-JKS"/>
+                <outlet property="scrollView" destination="NNH-rL-Vfc" id="QEU-qO-bAs"/>
+                <outlet property="view" destination="YFT-ME-TUl" id="uAF-Hk-q9U"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="YFT-ME-TUl">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNH-rL-Vfc">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Urk-7f-D8w">
+                            <rect key="frame" x="10" y="80" width="580" height="435"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Urk-7f-D8w" secondAttribute="height" multiplier="4:3" id="w49-CQ-2Ba"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gm0-Gr-ntp">
+                            <rect key="frame" x="10" y="522" width="580" height="401.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="gm0-Gr-ntp" secondAttribute="height" multiplier="13:9" id="15K-7q-lf9"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="gm0-Gr-ntp" firstAttribute="top" secondItem="Urk-7f-D8w" secondAttribute="bottom" constant="7.5" id="9hP-iL-3Za"/>
+                        <constraint firstItem="Urk-7f-D8w" firstAttribute="width" secondItem="NNH-rL-Vfc" secondAttribute="width" constant="-20" id="ADD-PN-Ffy"/>
+                        <constraint firstAttribute="bottom" secondItem="gm0-Gr-ntp" secondAttribute="bottom" constant="58" id="OBm-1F-9lt"/>
+                        <constraint firstItem="Urk-7f-D8w" firstAttribute="top" secondItem="NNH-rL-Vfc" secondAttribute="top" constant="80" id="Ukr-UZ-1f4"/>
+                        <constraint firstItem="Urk-7f-D8w" firstAttribute="centerX" secondItem="NNH-rL-Vfc" secondAttribute="centerX" id="fiV-3r-wuk"/>
+                        <constraint firstAttribute="trailing" secondItem="Urk-7f-D8w" secondAttribute="trailing" constant="-10" id="h3Z-Tb-2mm"/>
+                        <constraint firstItem="gm0-Gr-ntp" firstAttribute="centerX" secondItem="Urk-7f-D8w" secondAttribute="centerX" id="luf-cE-4dY"/>
+                        <constraint firstItem="gm0-Gr-ntp" firstAttribute="width" secondItem="Urk-7f-D8w" secondAttribute="width" id="x21-O7-fSo"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="NNH-rL-Vfc" firstAttribute="width" secondItem="YFT-ME-TUl" secondAttribute="width" id="0dd-YR-KPF"/>
+                <constraint firstItem="NNH-rL-Vfc" firstAttribute="centerY" secondItem="YFT-ME-TUl" secondAttribute="centerY" id="6LF-Hh-PHq"/>
+                <constraint firstItem="NNH-rL-Vfc" firstAttribute="height" secondItem="YFT-ME-TUl" secondAttribute="height" id="Ruc-Nf-ucy"/>
+                <constraint firstItem="NNH-rL-Vfc" firstAttribute="centerX" secondItem="YFT-ME-TUl" secondAttribute="centerX" id="unU-ns-2e5"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="21" y="348"/>
+        </view>
+    </objects>
+</document>
