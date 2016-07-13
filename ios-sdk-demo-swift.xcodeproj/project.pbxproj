@@ -45,6 +45,7 @@
 		1C7896A31CFC4333003780D6 /* CardSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C7896A11CFC4333003780D6 /* CardSampleViewController.xib */; };
 		1C7896A71CFC4429003780D6 /* InterstitialSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7896A51CFC4429003780D6 /* InterstitialSampleViewController.swift */; };
 		1C7896A81CFC4429003780D6 /* InterstitialSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C7896A61CFC4429003780D6 /* InterstitialSampleViewController.xib */; };
+		1C8B6A481D35E4BD0015C7B4 /* VANativeAd+IconAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B6A471D35E4BD0015C7B4 /* VANativeAd+IconAlignment.m */; };
 		1CAAE9F61CFC2A59003966A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAE9F51CFC2A59003966A0 /* AppDelegate.swift */; };
 		1CAAE9FD1CFC2A59003966A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CAAE9FC1CFC2A59003966A0 /* Assets.xcassets */; };
 		1CAAEA001CFC2A59003966A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CAAE9FE1CFC2A59003966A0 /* LaunchScreen.storyboard */; };
@@ -112,6 +113,8 @@
 		1C7896A11CFC4333003780D6 /* CardSampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardSampleViewController.xib; sourceTree = "<group>"; };
 		1C7896A51CFC4429003780D6 /* InterstitialSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialSampleViewController.swift; sourceTree = "<group>"; };
 		1C7896A61CFC4429003780D6 /* InterstitialSampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InterstitialSampleViewController.xib; sourceTree = "<group>"; };
+		1C8B6A461D35E4BD0015C7B4 /* VANativeAd+IconAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VANativeAd+IconAlignment.h"; sourceTree = "<group>"; };
+		1C8B6A471D35E4BD0015C7B4 /* VANativeAd+IconAlignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VANativeAd+IconAlignment.m"; sourceTree = "<group>"; };
 		1CAAE9F21CFC2A59003966A0 /* ios-sdk-demo-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-sdk-demo-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CAAE9F51CFC2A59003966A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CAAE9FC1CFC2A59003966A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -421,6 +424,8 @@
 				1CDB1BFA1CFD30F2004B3A46 /* NativeAdSample4ViewController.xib */,
 				1CDB1BFD1CFD319C004B3A46 /* VANativeAd+FullscreenIcon.h */,
 				1CDB1BFE1CFD319C004B3A46 /* VANativeAd+FullscreenIcon.m */,
+				1C8B6A461D35E4BD0015C7B4 /* VANativeAd+IconAlignment.h */,
+				1C8B6A471D35E4BD0015C7B4 /* VANativeAd+IconAlignment.m */,
 			);
 			path = NativeAdSample4;
 			sourceTree = "<group>";
@@ -673,6 +678,7 @@
 				1C7896A21CFC4333003780D6 /* CardSampleViewController.swift in Sources */,
 				1C1A98131D1788CD00287E2F /* SampleView4.swift in Sources */,
 				1C7896A71CFC4429003780D6 /* InterstitialSampleViewController.swift in Sources */,
+				1C8B6A481D35E4BD0015C7B4 /* VANativeAd+IconAlignment.m in Sources */,
 				1C7896901CFC2C31003780D6 /* MainViewController.swift in Sources */,
 				1C5C68B41D2B46B400E1ED0B /* PetImageTableViewCell.swift in Sources */,
 				1C1A98191D17961600287E2F /* RewardedVideoSampleViewController.swift in Sources */,

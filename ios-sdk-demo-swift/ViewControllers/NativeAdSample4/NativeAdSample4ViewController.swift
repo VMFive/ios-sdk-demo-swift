@@ -96,6 +96,14 @@ class NativeAdSample4ViewController: UIViewController {
         print("===== will change isNeedFullscreenIcon from \(self.nativeAd.isNeedFullscreenIcon ? "YES" : "NO")")
         self.nativeAd.isNeedFullscreenIcon = false
         print("===== did change isNeedFullscreenIcon to \(self.nativeAd.isNeedFullscreenIcon ? "YES" : "NO")")
+        
+        // 改變 videoItemsAlignment 設定值, 可控制 icon 對齊的是 video 影片邊緣, 或是整個 adview 畫面邊緣
+        // 0 為貼齊 video, 1 為貼齊 view
+        // 需將 #import "VANativeAd+IconAlignment.h" 加入 Bridging file 內
+        // 可以出現這個設定值
+        print("===== will change videoItemsAlignment from \(self.nativeAd.videoItemsAlignment)");
+        self.nativeAd.videoItemsAlignment = 1;
+        print("===== did change videoItemsAlignment to \(self.nativeAd.videoItemsAlignment)");
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -10,6 +10,7 @@
 @import mopub_ios_sdk;
 #import "NewController.h"
 #import "VANativeAd+FullscreenIcon.h"
+#import "VANativeAd+IconAlignment.h"
 #import "VMFiveCustomBanner.h"
 #import "VMFiveCustomInterstitial.h"
 #import "VMFiveNativeVideoAdAdapter.h"
