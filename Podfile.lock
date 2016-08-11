@@ -3,16 +3,16 @@ PODS:
   - mopub-ios-sdk (4.7.0):
     - mopub-ios-sdk/MoPubSDK (= 4.7.0)
   - mopub-ios-sdk/MoPubSDK (4.7.0)
-  - VMFiveAdNetwork (2.1.11)
+  - VMFiveAdNetwork (2.1.12)
 
 DEPENDENCIES:
   - GoogleMobileAds (~> 7.8.0)
   - mopub-ios-sdk (~> 4.7.0)
-  - VMFiveAdNetwork (~> 2.1.11)
+  - VMFiveAdNetwork (~> 2.1.12)
 
 SPEC CHECKSUMS:
   GoogleMobileAds: c79931d6eef16b1e4c35d331cf23c47e0dd490d2
   mopub-ios-sdk: e46b277cdb77b1745567b419742f77fed6865262
-  VMFiveAdNetwork: 4c96394bbc00d7b40f04d77a8a5debf6444db418
+  VMFiveAdNetwork: 288824225fb0d67b8984057252157aba2ff75f29
 
 COCOAPODS: 0.39.0
