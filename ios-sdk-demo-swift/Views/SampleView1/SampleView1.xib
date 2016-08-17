@@ -33,6 +33,14 @@
                         <constraint firstAttribute="height" constant="50" id="aRU-yL-S5h"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3Y-Ph-h2A">
+                    <rect key="frame" x="242" y="8" width="70" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="9Js-hV-bNe"/>
+                        <constraint firstAttribute="width" constant="70" id="AsB-4p-J0g"/>
+                    </constraints>
+                    <state key="normal" title="了解更多"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -43,14 +51,17 @@
                 <constraint firstItem="DzD-E5-ybY" firstAttribute="top" secondItem="4LK-Gb-e1G" secondAttribute="bottom" id="Opx-WC-6fc"/>
                 <constraint firstAttribute="bottom" secondItem="DzD-E5-ybY" secondAttribute="bottom" id="V0r-Ry-Mqh"/>
                 <constraint firstItem="4LK-Gb-e1G" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VeB-hT-fEl"/>
+                <constraint firstAttribute="trailing" secondItem="K3Y-Ph-h2A" secondAttribute="trailing" constant="8" id="bEr-Jj-Xxz"/>
                 <constraint firstAttribute="trailing" secondItem="DzD-E5-ybY" secondAttribute="trailing" id="bLE-JO-Szm"/>
                 <constraint firstItem="DjO-qg-3Zu" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="eUq-jL-jOc"/>
+                <constraint firstItem="K3Y-Ph-h2A" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="gtz-p3-1vR"/>
                 <constraint firstItem="DzD-E5-ybY" firstAttribute="top" secondItem="4LK-Gb-e1G" secondAttribute="bottom" id="hcf-gs-WnN"/>
                 <constraint firstAttribute="trailing" secondItem="4LK-Gb-e1G" secondAttribute="trailing" id="u1b-X3-U0j"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="ctaButton" destination="K3Y-Ph-h2A" id="WVp-CW-zcb"/>
                 <outlet property="mainImageView" destination="DzD-E5-ybY" id="151-oN-oCU"/>
                 <outlet property="titleLabel" destination="4LK-Gb-e1G" id="rsc-og-itd"/>
                 <outlet property="videoView" destination="DjO-qg-3Zu" id="UbL-E8-aVn"/>

@@ -27,6 +27,25 @@ extension SampleView1: VANativeAdViewRenderProtocol {
         return self.mainImageView
     }
     
+    func nativeCallToActionTextLabel() -> UILabel {
+        return self.ctaLabel
+    }
+    
+    func clickableViews() -> [AnyObject] {
+        return [ self.ctaButton ]
+    }
+    
+}
+
+// MARK: KVO
+extension SampleView1 {
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if let safeChange = change, let newValue = safeChange["new"] as? String where keyPath == "ctaLabel.text" {
+            self.ctaButton.setTitle(newValue, forState: .Normal)
+        }
+    }
+    
 }
 
 // MARK: Life Cycle
@@ -35,5 +54,17 @@ class SampleView1: UIView {
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var mainImageView: UIImageView!
-
+    @IBOutlet weak var ctaButton: UIButton!
+    
+    let ctaLabel = UILabel()
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.addObserver(self, forKeyPath: "ctaLabel.text", options: .New, context: nil)
+    }
+    
+    deinit {
+        self.removeObserver(self, forKeyPath: "ctaLabel.text", context: nil)
+    }
+    
 }
