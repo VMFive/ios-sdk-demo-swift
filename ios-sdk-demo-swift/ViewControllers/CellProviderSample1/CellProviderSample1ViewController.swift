@@ -153,8 +153,9 @@ extension CellProviderSample1ViewController: UITableViewDataSource {
             if let safeTextLabel = cell.textLabel {
                 safeTextLabel.textAlignment = .Center
                 let sex = currentInfo["Sex"] == "雄" ? "♂" : "♀"
-                let name = currentInfo["Name"]
-                safeTextLabel.text = "\(sex) \(name)"
+                if let safeName = currentInfo["Name"] {
+                    safeTextLabel.text = "\(sex) \(safeName)"
+                }
             }
             return cell
             
