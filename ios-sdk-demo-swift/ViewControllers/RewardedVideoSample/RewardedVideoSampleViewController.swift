@@ -52,6 +52,11 @@ extension RewardedVideoSampleViewController: VAAdRewardedVideoDelegate {
         print("\(#function) \(error)")
     }
     
+    func rewardedCustomString() -> String {
+        print("\(#function)")
+        return "YOURCUSTOMSTRING"
+    }
+    
 }
 
 // MARK: Life Cycle
