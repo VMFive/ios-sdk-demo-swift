@@ -23,10 +23,6 @@ extension SampleView1: VANativeAdViewRenderProtocol {
         return self.titleLabel
     }
     
-    func nativeMainImageView() -> UIImageView {
-        return self.mainImageView
-    }
-    
     func nativeCallToActionTextLabel() -> UILabel {
         return self.ctaLabel
     }
@@ -53,7 +49,6 @@ class SampleView1: UIView {
     
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var ctaButton: UIButton!
     
     let ctaLabel = UILabel()

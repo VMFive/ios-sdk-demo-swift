@@ -225,8 +225,8 @@ extension CellProviderSample1ViewController {
             // 這邊我設定 ad 與畫面等寬
             let adWidth = CGRectGetWidth(UIScreen.mainScreen().bounds);
             
-            // 高度 80 為預留給 title 和 main image, 其餘的部分, 會被等比例的壓短
-            let adHeight = adWidth * ratio + 80.0;
+            // 高度 30 為預留給 main image, 其餘的部分, 會被等比例的壓短
+            let adHeight = adWidth * ratio + 30.0;
             return CGSize(width: adWidth, height: adHeight);
         }
         return attribute
