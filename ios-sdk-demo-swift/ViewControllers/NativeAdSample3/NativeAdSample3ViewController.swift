@@ -11,14 +11,14 @@ import UIKit
 // MARK: VANativeAdDelegate
 extension NativeAdSample3ViewController: VANativeAdDelegate {
     
-    func nativeAdDidLoad(nativeAd: VANativeAd) {
+    func nativeAdDidLoad(_ nativeAd: VANativeAd) {
         if let safeAdView = self.adView {
             
             // AdView存在時，可以直接將AdView帶入進行Rendering
             let render = VANativeAdViewRender(nativeAd: nativeAd, customAdView: safeAdView)
             
             // 清除AdView上廣告素材並重新Rendering
-            render.renderWithCompleteHandler({ (view, error) in
+            render.render(completeHandler: { (view, error) in
                 if let safeError = error {
                     print("Render did fail With error : \(safeError)")
                 }
@@ -26,7 +26,7 @@ extension NativeAdSample3ViewController: VANativeAdDelegate {
         }
         else {
             let render = VANativeAdViewRender(nativeAd: nativeAd, customizedAdViewClass: SampleView3.self)
-            render.renderWithCompleteHandler({ [weak self] (view, error) in
+            render.render(completeHandler: { [weak self] (view, error) in
                 guard let safeSelf = self else {
                     return
                 }
@@ -39,11 +39,11 @@ extension NativeAdSample3ViewController: VANativeAdDelegate {
                     
                     // autolayout 設定, 固定大小, 水平垂直置中
                     safeView.translatesAutoresizingMaskIntoConstraints = false
-                    safeSelf.view.addConstraint(NSLayoutConstraint(item: safeView, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: CGRectGetWidth(safeView.bounds)))
-                    safeSelf.view.addConstraint(NSLayoutConstraint(item: safeView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: CGRectGetHeight(safeView.bounds)))
+                    safeSelf.view.addConstraint(NSLayoutConstraint(item: safeView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: safeView.bounds.width))
+                    safeSelf.view.addConstraint(NSLayoutConstraint(item: safeView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: safeView.bounds.height))
                     
-                    safeSelf.view.addConstraint(NSLayoutConstraint(item: safeView, attribute: .CenterX, relatedBy: .Equal, toItem: safeSelf.view, attribute: .CenterX, multiplier: 1.0, constant: 0))
-                    safeSelf.view.addConstraint(NSLayoutConstraint(item: safeView, attribute: .CenterY, relatedBy: .Equal, toItem: safeSelf.view, attribute: .CenterY, multiplier: 1.0, constant: 0))
+                    safeSelf.view.addConstraint(NSLayoutConstraint(item: safeView, attribute: .centerX, relatedBy: .equal, toItem: safeSelf.view, attribute: .centerX, multiplier: 1.0, constant: 0))
+                    safeSelf.view.addConstraint(NSLayoutConstraint(item: safeView, attribute: .centerY, relatedBy: .equal, toItem: safeSelf.view, attribute: .centerY, multiplier: 1.0, constant: 0))
                     safeSelf.view.layoutIfNeeded()
                     
                     safeSelf.adView = safeView
@@ -52,27 +52,27 @@ extension NativeAdSample3ViewController: VANativeAdDelegate {
         }
     }
     
-    func nativeAd(nativeAd: VANativeAd, didFailedWithError error: NSError) {
+    func nativeAd(_ nativeAd: VANativeAd, didFailedWithError error: Error) {
         print("\(#function) \(error)")
     }
     
-    func nativeAdDidClick(nativeAd: VANativeAd) {
+    func nativeAdDidClick(_ nativeAd: VANativeAd) {
         print("\(#function)")
     }
     
-    func nativeAdDidFinishHandlingClick(nativeAd: VANativeAd) {
+    func nativeAdDidFinishHandlingClick(_ nativeAd: VANativeAd) {
         print("\(#function)")
     }
     
-    func nativeAdBeImpressed(nativeAd: VANativeAd) {
+    func nativeAdBeImpressed(_ nativeAd: VANativeAd) {
         print("\(#function)")
     }
     
-    func nativeAdDidFinishImpression(nativeAd: VANativeAd) {
+    func nativeAdDidFinishImpression(_ nativeAd: VANativeAd) {
         print("\(#function)")
         
         // 當影片播放完畢時, 加入這行可以取得下一則影音廣告
-        nativeAd.loadAd()
+        nativeAd.load()
     }
     
 }
@@ -80,8 +80,8 @@ extension NativeAdSample3ViewController: VANativeAdDelegate {
 // MARK: Life Cycle
 class NativeAdSample3ViewController: UIViewController {
 
-    private let nativeAd = VANativeAd(placement: "VMFiveAdNetwork_NativeAdSample3", adType: kVAAdTypeVideoCard)
-    private var adView: UIView?
+    fileprivate let nativeAd = VANativeAd(placement: "VMFiveAdNetwork_NativeAdSample3", adType: kVAAdTypeVideoCard)
+    fileprivate var adView: UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,14 +94,14 @@ class NativeAdSample3ViewController: UIViewController {
         self.nativeAd.delegate = self;
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.nativeAd.loadAd()
+        self.nativeAd.load()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.nativeAd.unloadAd()
+        self.nativeAd.unload()
     }
 
 }

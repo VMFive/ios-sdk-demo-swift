@@ -11,11 +11,11 @@ import UIKit
 // MARK: VANativeAdDelegate
 extension NativeAdSample7ViewController: VANativeAdDelegate {
     
-    func nativeAdDidLoad(nativeAd: VANativeAd) {
+    func nativeAdDidLoad(_ nativeAd: VANativeAd) {
         print("\(#function)")
 
         let render: VANativeAdViewRender = VANativeAdViewRender(nativeAd: nativeAd, customizedAdViewClass: SampleView3.self)
-        render.renderWithCompleteHandler({ [weak self] (view, error) -> Void in
+        render.render(completeHandler: { [weak self] (view, error) -> Void in
             guard let safeSelf = self else {
                 return
             }
@@ -33,23 +33,23 @@ extension NativeAdSample7ViewController: VANativeAdDelegate {
         })
     }
     
-    func nativeAd(nativeAd: VANativeAd, didFailedWithError error: NSError) {
+    func nativeAd(_ nativeAd: VANativeAd, didFailedWithError error: Error) {
         print("\(#function) \(error)")
     }
     
-    func nativeAdDidClick(nativeAd: VANativeAd) {
+    func nativeAdDidClick(_ nativeAd: VANativeAd) {
         print("\(#function)")
     }
     
-    func nativeAdDidFinishHandlingClick(nativeAd: VANativeAd) {
+    func nativeAdDidFinishHandlingClick(_ nativeAd: VANativeAd) {
         print("\(#function)")
     }
     
-    func nativeAdBeImpressed(nativeAd: VANativeAd) {
+    func nativeAdBeImpressed(_ nativeAd: VANativeAd) {
         print("\(#function)")
     }
     
-    func nativeAdDidFinishImpression(nativeAd: VANativeAd) {
+    func nativeAdDidFinishImpression(_ nativeAd: VANativeAd) {
         print("\(#function)")
     }
     
@@ -58,11 +58,11 @@ extension NativeAdSample7ViewController: VANativeAdDelegate {
 // MARK: Private Instance Method
 extension NativeAdSample7ViewController {
     
-    private func loadNativaAd() {
+    fileprivate func loadNativaAd() {
         self.nativeAd.testMode = true
         self.nativeAd.apiKey = "YOUR API KEY HERE"
         self.nativeAd.delegate = self
-        self.nativeAd.loadAd()
+        self.nativeAd.load()
     }
     
 }
@@ -73,8 +73,8 @@ class NativeAdSample7ViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var adContainView: UIView!
-    private let nativeAd = VANativeAd(placement: "VMFiveAdNetwork_NativeAdSample7", adType: kVAAdTypeVideoCard)
-    private var adView: UIView?
+    fileprivate let nativeAd = VANativeAd(placement: "VMFiveAdNetwork_NativeAdSample7", adType: kVAAdTypeVideoCard)
+    fileprivate var adView: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,21 +85,21 @@ class NativeAdSample7ViewController: UIViewController {
         self.imageView.image = UIImage(named: "placeholder")
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.loadNativaAd()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let width = CGRectGetWidth(UIScreen.mainScreen().bounds)
-        let height = CGRectGetMaxY(self.adContainView.frame) + 10
+        let width = UIScreen.main.bounds.width
+        let height = self.adContainView.frame.maxY + 10
         self.scrollView.contentSize = CGSize(width: width, height: height)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.nativeAd.unloadAd()
+        self.nativeAd.unload()
     }
 
 }

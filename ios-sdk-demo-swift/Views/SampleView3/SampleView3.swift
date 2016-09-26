@@ -23,7 +23,7 @@ extension SampleView3: VANativeAdViewRenderProtocol {
         return self.titleLabel ?? UILabel()
     }
     
-    func clickableViews() -> [AnyObject] {
+    func clickableViews() -> [Any] {
         if let safeCtaButton = self.ctaButton {
             return [ safeCtaButton ]
         }
@@ -37,11 +37,11 @@ extension SampleView3: VANativeAdViewRenderProtocol {
 // MARK: Private Instance Method
 extension SampleView3 {
     
-    private func defaultAutoresizingMask() -> UIViewAutoresizing {
-        return [ .FlexibleWidth, .FlexibleHeight, .FlexibleTopMargin, .FlexibleBottomMargin, .FlexibleLeftMargin, .FlexibleRightMargin ]
+    fileprivate func defaultAutoresizingMask() -> UIViewAutoresizing {
+        return [ .flexibleWidth, .flexibleHeight, .flexibleTopMargin, .flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin ]
     }
     
-    private func defaultLayout() {
+    fileprivate func defaultLayout() {
         self.autoresizingMask = self.defaultAutoresizingMask()
         
         let videoView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 180))
@@ -59,13 +59,13 @@ extension SampleView3 {
         self.addSubview(titleLabel)
         self.titleLabel = titleLabel
         
-        let ctaButton = UIButton(type: .Custom)
+        let ctaButton = UIButton(type: .custom)
         ctaButton.frame = CGRect(x: 230, y: 180, width: 90, height: 30)
         ctaButton.autoresizingMask = self.defaultAutoresizingMask()
-        ctaButton.titleLabel?.font = UIFont.systemFontOfSize(15)
-        ctaButton.titleLabel?.textColor = UIColor.whiteColor()
-        ctaButton.backgroundColor = UIColor.blackColor()
-        ctaButton.setTitle("了解更多", forState: .Normal)
+        ctaButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        ctaButton.titleLabel?.textColor = UIColor.white
+        ctaButton.backgroundColor = UIColor.black
+        ctaButton.setTitle("了解更多", for: .normal)
         self.addSubview(ctaButton)
         self.ctaButton = ctaButton;
     }

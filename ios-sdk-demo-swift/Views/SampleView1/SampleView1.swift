@@ -27,7 +27,7 @@ extension SampleView1: VANativeAdViewRenderProtocol {
         return self.ctaLabel
     }
     
-    func clickableViews() -> [AnyObject] {
+    func clickableViews() -> [Any] {
         return [ self.ctaButton ]
     }
     
@@ -36,9 +36,9 @@ extension SampleView1: VANativeAdViewRenderProtocol {
 // MARK: KVO
 extension SampleView1 {
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if let safeChange = change, let newValue = safeChange["new"] as? String where keyPath == "ctaLabel.text" {
-            self.ctaButton.setTitle(newValue, forState: .Normal)
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let safeChange = change, let newValue = safeChange[.newKey] as? String, keyPath == "ctaLabel.text" {
+            self.ctaButton.setTitle(newValue, for: .normal)
         }
     }
     
@@ -55,7 +55,7 @@ class SampleView1: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.addObserver(self, forKeyPath: "ctaLabel.text", options: .New, context: nil)
+        self.addObserver(self, forKeyPath: "ctaLabel.text", options: .new, context: nil)
     }
     
     deinit {

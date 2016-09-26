@@ -11,44 +11,47 @@ import UIKit
 // MARK: VAAdRewardedVideoDelegate
 extension RewardedVideoSampleViewController: VAAdRewardedVideoDelegate {
     
-    func rewardedVideoDidLoad(rewardedVideo: VAAdRewardedVideo) {
+    func rewardedVideoDidLoad(_ rewardedVideo: VAAdRewardedVideo) {
         print("\(#function)")
         rewardedVideo.show()
     }
     
-    func rewardedVideoWillShow(rewardedVideo: VAAdRewardedVideo) {
+    func rewardedVideoWillShow(_ rewardedVideo: VAAdRewardedVideo) {
         print("\(#function)")
     }
     
-    func rewardedVideoDidShow(rewardedVideo: VAAdRewardedVideo) {
+    func rewardedVideoDidShow(_ rewardedVideo: VAAdRewardedVideo) {
         print("\(#function)")
     }
     
-    func rewardedVideoWillClose(rewardedVideo: VAAdRewardedVideo) {
+    func rewardedVideoWillClose(_ rewardedVideo: VAAdRewardedVideo) {
         print("\(#function)")
     }
     
-    func rewardedVideoDidClose(rewardedVideo: VAAdRewardedVideo) {
+    func rewardedVideoDidClose(_ rewardedVideo: VAAdRewardedVideo) {
         print("\(#function)")
         if self.successRewarded {
-            UIAlertView(title: "成功獲得獎勵", message: nil, delegate: nil, cancelButtonTitle: "確定").show()
+            let alert = UIAlertController(title: "成功獲得獎勵", message: nil, preferredStyle: .alert)
+            let action = UIAlertAction(title: "確定", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
-    func rewardedVideoDidClick(rewardedVideo: VAAdRewardedVideo) {
+    func rewardedVideoDidClick(_ rewardedVideo: VAAdRewardedVideo) {
         print("\(#function)")
     }
     
-    func rewardedVideoDidFinishHandlingClick(rewardedVideo: VAAdRewardedVideo) {
+    func rewardedVideoDidFinishHandlingClick(_ rewardedVideo: VAAdRewardedVideo) {
         print("\(#function)")
     }
     
-    func rewardedVideo(rewardedVideo: VAAdRewardedVideo, shouldReward rewarded: VAAdRewarded) {
+    func rewardedVideo(_ rewardedVideo: VAAdRewardedVideo, shouldReward rewarded: VAAdRewarded) {
         print("\(#function)")
         self.successRewarded = true
     }
     
-    func rewardedVideo(rewardedVideo: VAAdRewardedVideo, didFailWithError error: NSError) {
+    func rewardedVideo(_ rewardedVideo: VAAdRewardedVideo, didFailWithError error: Error) {
         print("\(#function) \(error)")
     }
     
@@ -62,8 +65,8 @@ extension RewardedVideoSampleViewController: VAAdRewardedVideoDelegate {
 // MARK: Life Cycle
 class RewardedVideoSampleViewController: UIViewController {
 
-    private let rewardedVideo = VAAdRewardedVideo(placement: "VMFiveAdNetwork_RewardedVideoSample")
-    private var successRewarded = false
+    fileprivate let rewardedVideo = VAAdRewardedVideo(placement: "VMFiveAdNetwork_RewardedVideoSample")
+    fileprivate var successRewarded = false
 
     override func viewDidLoad() {
         super.viewDidLoad()

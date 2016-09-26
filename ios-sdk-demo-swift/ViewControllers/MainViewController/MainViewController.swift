@@ -11,35 +11,39 @@ import UIKit
 // MARK: UITableViewDataSource
 extension MainViewController: UITableViewDataSource {
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return self.items?.count ?? 0
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if
             let safeItems = self.items,
-            let safeTitle = safeItems[section]["sectionTitle"] as? String {
+            let safeSection = safeItems[section] as? [String : AnyObject],
+            let safeTitle = safeSection["sectionTitle"] as? String {
             return safeTitle
         }
         return ""
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if
             let safeItems = self.items,
-            let safeRows = safeItems[section]["rows"] as? NSArray {
+            let safeSection = safeItems[section] as? [String : AnyObject],
+            let safeRows = safeSection["rows"] as? NSArray {
             return safeRows.count
         }
         return 0
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath: indexPath)
-        cell.selectionStyle = .None
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        cell.selectionStyle = .none
         if
             let safeItems = self.items,
-            let safeRows = safeItems[indexPath.section]["rows"] as? NSArray,
-            let safeRowText = safeRows[indexPath.row]["rowText"] as? String {
+            let safeSection = safeItems[indexPath.section] as? [String : AnyObject],
+            let safeRows = safeSection["rows"] as? NSArray,
+            let safeRow = safeRows[indexPath.row] as? [String : AnyObject],
+            let safeRowText = safeRow["rowText"] as? String {
             cell.textLabel?.text = safeRowText == "version" ? VANativeAd.version() : safeRowText
         }
         return cell
@@ -50,11 +54,13 @@ extension MainViewController: UITableViewDataSource {
 // MARK: UITableViewDelegate
 extension MainViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if
             let safeItems = self.items,
-            let safeRows = safeItems[indexPath.section]["rows"] as? NSArray,
-            let safeAction = safeRows[indexPath.row]["action"] as? String,
+            let safeSection = safeItems[indexPath.section] as? [String : AnyObject],
+            let safeRows = safeSection["rows"] as? NSArray,
+            let safeRow = safeRows[indexPath.row] as? [String : AnyObject],
+            let safeAction = safeRow["action"] as? String,
             let nextController = NewController.from("ios_sdk_demo_swift.\(safeAction)") {
             self.navigationController?.pushViewController(nextController, animated: true)
         }
@@ -66,8 +72,8 @@ extension MainViewController: UITableViewDelegate {
 class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    private lazy var items: NSArray? = {
-        if let safePath = NSBundle.mainBundle().pathForResource("DemoList", ofType: "plist") {
+    fileprivate lazy var items: NSArray? = {
+        if let safePath = Bundle.main.path(forResource: "DemoList", ofType: "plist") {
             return NSArray(contentsOfFile: safePath)
         }
         else {
@@ -79,7 +85,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "Hello Demos"
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
     }
 
 }

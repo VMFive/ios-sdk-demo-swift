@@ -11,7 +11,7 @@ import UIKit
 // MARK: VANativeAdDelegate
 extension NativeAdSample2ViewController: VANativeAdDelegate {
     
-    func nativeAdDidLoad(nativeAd: VANativeAd) {
+    func nativeAdDidLoad(_ nativeAd: VANativeAd) {
         var render: VANativeAdViewRender
         if let safeAdView = self.adView {
             render = VANativeAdViewRender(nativeAd: nativeAd, customAdView: safeAdView)
@@ -20,7 +20,7 @@ extension NativeAdSample2ViewController: VANativeAdDelegate {
             render = VANativeAdViewRender(nativeAd: nativeAd, customizedAdViewClass: SampleView2.self)
         }
         
-        render.renderWithCompleteHandler { [weak self] (view, error) in
+        render.render { [weak self] (view, error) in
             guard let safeSelf = self else {
                 return
             }
@@ -42,23 +42,23 @@ extension NativeAdSample2ViewController: VANativeAdDelegate {
         }
     }
     
-    func nativeAd(nativeAd: VANativeAd, didFailedWithError error: NSError) {
+    func nativeAd(_ nativeAd: VANativeAd, didFailedWithError error: Error) {
         print("\(#function) \(error)")
     }
     
-    func nativeAdDidClick(nativeAd: VANativeAd) {
+    func nativeAdDidClick(_ nativeAd: VANativeAd) {
         print("\(#function)")
     }
     
-    func nativeAdDidFinishHandlingClick(nativeAd: VANativeAd) {
+    func nativeAdDidFinishHandlingClick(_ nativeAd: VANativeAd) {
         print("\(#function)")
     }
     
-    func nativeAdBeImpressed(nativeAd: VANativeAd) {
+    func nativeAdBeImpressed(_ nativeAd: VANativeAd) {
         print("\(#function)")
     }
     
-    func nativeAdDidFinishImpression(nativeAd: VANativeAd) {
+    func nativeAdDidFinishImpression(_ nativeAd: VANativeAd) {
         print("\(#function)")
     }
     
@@ -67,13 +67,13 @@ extension NativeAdSample2ViewController: VANativeAdDelegate {
 // MARK: UITableViewDataSource
 extension NativeAdSample2ViewController: UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.titles.count + self.isAdReadyIntValue
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath: indexPath)
-        if let safeAdView = self.adView where self.isAdReady && indexPath.row == 0 {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        if let safeAdView = self.adView, self.isAdReady && indexPath.row == 0 {
             cell.textLabel?.text = safeAdView.titleLabel.text
         }
         else {
@@ -87,15 +87,15 @@ extension NativeAdSample2ViewController: UITableViewDataSource {
 // MARK: UITableViewDelegate
 extension NativeAdSample2ViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if self.isAdReady && indexPath.row == 0 {
             self.showAd()
         }
         else {
-            let alert = UIAlertController(title: "點到了", message: self.titles[indexPath.row - self.isAdReadyIntValue], preferredStyle: .Alert)
-            let action = UIAlertAction(title: "確定", style: .Default, handler: nil)
+            let alert = UIAlertController(title: "點到了", message: self.titles[indexPath.row - self.isAdReadyIntValue], preferredStyle: .alert)
+            let action = UIAlertAction(title: "確定", style: .default, handler: nil)
             alert.addAction(action)
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -104,54 +104,54 @@ extension NativeAdSample2ViewController: UITableViewDelegate {
 // MARK: Private Instance Method
 extension NativeAdSample2ViewController {
     
-    private func showAd() {
+    fileprivate func showAd() {
         if let safeAdView = self.adView {
             self.view.addSubview(safeAdView)
             
             // autolayout 設定, 固定大小, 水平垂直置中
             safeAdView.translatesAutoresizingMaskIntoConstraints = false
-            safeAdView.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: CGRectGetWidth(safeAdView.bounds)))
-            safeAdView.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: CGRectGetHeight(safeAdView.bounds)))
+            safeAdView.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: safeAdView.bounds.width))
+            safeAdView.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: safeAdView.bounds.height))
             
-            self.view.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1.0, constant: 0))
-            self.view.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .CenterY, relatedBy: .Equal, toItem: self.view, attribute: .CenterY, multiplier: 1.0, constant: 0))
+            self.view.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0))
+            self.view.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0))
             self.view.layoutIfNeeded()
             
-            safeAdView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0, 0);
-            UIView.animateWithDuration(0.15, animations: { [weak self] in
+            safeAdView.transform = CGAffineTransform.identity.scaledBy(x: 0, y: 0)
+            UIView.animate(withDuration: 0.15, animations: { [weak self] in
                 guard let safeSelf = self else {
                     return
                 }
-                safeSelf.adView?.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.2, 1.2);
+                safeSelf.adView?.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2)
             }) { [weak self] (finished) in
-                UIView.animateWithDuration(0.15, animations: { [weak self] in
+                UIView.animate(withDuration: 0.15, animations: { [weak self] in
                     guard let safeSelf = self else {
                         return
                     }
-                    safeSelf.adView?.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
+                    safeSelf.adView?.transform = CGAffineTransform.identity.scaledBy(x: 1.0, y: 1.0)
                 }, completion:nil)
             }
         }
     }
     
-    private func hideAd() {
-        UIView.animateWithDuration(0.15, animations: { [weak self] in
+    fileprivate func hideAd() {
+        UIView.animate(withDuration: 0.15, animations: { [weak self] in
             guard let safeSelf = self else {
                 return
             }
-            safeSelf.adView?.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.2, 1.2);
+            safeSelf.adView?.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2)
         }) { [weak self] (finished) in
-            UIView.animateWithDuration(0.15, animations: { [weak self] in
+            UIView.animate(withDuration: 0.15, animations: { [weak self] in
                 guard let safeSelf = self else {
                     return
                 }
-                safeSelf.adView?.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.2, 0.2);
+                safeSelf.adView?.transform = CGAffineTransform.identity.scaledBy(x: 0.2, y: 0.2);
             }, completion: { [weak self] (finished) in
                 guard let safeSelf = self else {
                     return
                 }
                 safeSelf.adView?.removeFromSuperview()
-                safeSelf.nativeAd.loadAd()
+                safeSelf.nativeAd.load()
             })
         }
     }
@@ -163,33 +163,33 @@ class NativeAdSample2ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    private let nativeAd = VANativeAd(placement: "VMFiveAdNetwork_NativeAdSample2", adType: kVAAdTypeVideoCard)
-    private var adView: SampleView2?
-    private var isAdReady = false
-    private var isAdReadyIntValue: Int {
+    fileprivate let nativeAd = VANativeAd(placement: "VMFiveAdNetwork_NativeAdSample2", adType: kVAAdTypeVideoCard)
+    fileprivate var adView: SampleView2?
+    fileprivate var isAdReady = false
+    fileprivate var isAdReadyIntValue: Int {
         return (self.isAdReady == false ? 0 : 1)
     }
-    private let titles = [ "第四集", "第三集", "第二集", "第一集" ]
+    fileprivate let titles = [ "第四集", "第三集", "第二集", "第一集" ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "NativeAdSample2"
         
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         self.nativeAd.testMode = true;
         self.nativeAd.apiKey = "YOUR API KEY HERE";
         self.nativeAd.delegate = self;
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.nativeAd.loadAd()
+        self.nativeAd.load()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.nativeAd.unloadAd()
+        self.nativeAd.unload()
     }
 
 }

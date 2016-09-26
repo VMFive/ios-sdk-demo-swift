@@ -11,23 +11,23 @@ import UIKit
 // MARK: VAAdViewDelegate
 extension BannerSampleViewController: VAAdViewDelegate {
     
-    func adViewDidLoad(adView: VAAdView) {
+    func adViewDidLoad(_ adView: VAAdView) {
         print("\(#function)")
     }
     
-    func adViewBeImpressed(adView: VAAdView) {
+    func adViewBeImpressed(_ adView: VAAdView) {
         print("\(#function)")
     }
     
-    func adView(adView: VAAdView, didFailWithError error: NSError) {
+    func adView(_ adView: VAAdView, didFailWithError error: Error) {
         print("\(#function) \(error)")
     }
     
-    func adViewDidClick(adView: VAAdView) {
+    func adViewDidClick(_ adView: VAAdView) {
         print("\(#function)")
     }
     
-    func adViewDidFinishHandlingClick(adView: VAAdView) {
+    func adViewDidFinishHandlingClick(_ adView: VAAdView) {
         print("\(#function)")
     }
     
@@ -35,7 +35,7 @@ extension BannerSampleViewController: VAAdViewDelegate {
         return self
     }
     
-    func shouldAdViewBeReload(adView: VAAdView) -> Bool {
+    func shouldAdViewBeReload(_ adView: VAAdView) -> Bool {
         return true
     }
     

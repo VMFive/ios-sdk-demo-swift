@@ -11,7 +11,7 @@ import UIKit
 // MARK: MPNativeAdDelegate
 extension MoPubNativeAdSampleViewController: MPNativeAdDelegate {
     
-    func willPresentModalForNativeAd(nativeAd: MPNativeAd) {
+    func willLeaveApplication(from nativeAd: MPNativeAd) {
         print("\(#function)")
     }
     
@@ -40,10 +40,10 @@ extension MoPubNativeAdSampleViewController {
             
             // autolayout 設定, 固定大小, 水平垂直置中
             safeAdView.translatesAutoresizingMaskIntoConstraints = false
-            safeAdView.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 300))
-            safeAdView.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 313))
-            self.view.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1.0, constant: 0))
-            self.view.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .CenterY, relatedBy: .Equal, toItem: self.view, attribute: .CenterY, multiplier: 1.0, constant: 0))
+            safeAdView.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 300))
+            safeAdView.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 313))
+            self.view.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0))
+            self.view.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0))
             self.view.layoutIfNeeded()
         }
     }
@@ -65,16 +65,16 @@ class MoPubNativeAdSampleViewController: UIViewController {
         nativeVideoAdSettings.viewSizeHandler = { (maximumWidth: CGFloat) -> CGSize in
             return CGSize(width: maximumWidth, height: 312.0)
         }
-        let nativeVideoConfig: MPNativeAdRendererConfiguration = MOPUBNativeVideoAdRenderer.rendererConfigurationWithRendererSettings(nativeVideoAdSettings)
+        let nativeVideoConfig: MPNativeAdRendererConfiguration = MOPUBNativeVideoAdRenderer.rendererConfiguration(with: nativeVideoAdSettings)
         
         let adRequest: MPNativeAdRequest = MPNativeAdRequest(adUnitIdentifier: "7091c47489aa4796a44ff0802098adb8", rendererConfigurations: [nativeVideoConfig])
-        adRequest.startWithCompletionHandler({ (request, response, error) -> Void in
+        adRequest.start(completionHandler: { (request, response, error) -> Void in
             
             if error != nil {
                 print("================> \(error)")
             }
             else {
-                response.delegate = self
+                response?.delegate = self
                 self.nativeAd = response
                 self.displayAd()
                 print("Received Native Ad")

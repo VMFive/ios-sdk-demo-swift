@@ -23,19 +23,8 @@ extension SampleView2: VANativeAdViewRenderProtocol {
         return self.videoView
     }
     
-    func clickableViews() -> [AnyObject] {
+    func clickableViews() -> [Any] {
         return [ self.ctaLabel ]
-    }
-    
-}
-
-// MARK IBAction
-extension SampleView2 {
-    
-    @IBAction func closeAction(sender: AnyObject) {
-        if let safeOnClose = self.onClose {
-            safeOnClose()
-        }
     }
     
 }
@@ -46,6 +35,12 @@ class SampleView2: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var ctaLabel: UILabel!
+    
+    @IBAction func closeAction(_ sender: AnyObject) {
+        if let safeOnClose = self.onClose {
+            safeOnClose()
+        }
+    }
     
     var onClose: (() -> Void)?
     

@@ -11,7 +11,7 @@ import UIKit
 // MARK: VANativeAdDelegate
 extension NativeAdSample5ViewController: VANativeAdDelegate {
     
-    func nativeAdDidLoad(nativeAd: VANativeAd) {
+    func nativeAdDidLoad(_ nativeAd: VANativeAd) {
         var render: VANativeAdViewRender
         if let safeAdView = self.adView {
             render = VANativeAdViewRender(nativeAd: nativeAd, customAdView: safeAdView)
@@ -20,7 +20,7 @@ extension NativeAdSample5ViewController: VANativeAdDelegate {
             render = VANativeAdViewRender(nativeAd: nativeAd, customizedAdViewClass: SampleView1.self)
         }
         
-        render.renderWithCompleteHandler { [weak self] (view, error) in
+        render.render { [weak self] (view, error) in
             guard let safeSelf = self else {
                 return
             }
@@ -39,23 +39,23 @@ extension NativeAdSample5ViewController: VANativeAdDelegate {
         }
     }
     
-    func nativeAd(nativeAd: VANativeAd, didFailedWithError error: NSError) {
+    func nativeAd(_ nativeAd: VANativeAd, didFailedWithError error: Error) {
         print("\(#function) \(error)")
     }
     
-    func nativeAdDidClick(nativeAd: VANativeAd) {
+    func nativeAdDidClick(_ nativeAd: VANativeAd) {
         print("\(#function)")
     }
     
-    func nativeAdDidFinishHandlingClick(nativeAd: VANativeAd) {
+    func nativeAdDidFinishHandlingClick(_ nativeAd: VANativeAd) {
         print("\(#function)")
     }
     
-    func nativeAdBeImpressed(nativeAd: VANativeAd) {
+    func nativeAdBeImpressed(_ nativeAd: VANativeAd) {
         print("\(#function)")
     }
     
-    func nativeAdDidFinishImpression(nativeAd: VANativeAd) {
+    func nativeAdDidFinishImpression(_ nativeAd: VANativeAd) {
         print("\(#function)")
     }
     
@@ -64,22 +64,22 @@ extension NativeAdSample5ViewController: VANativeAdDelegate {
 // MARK: UICollectionViewDataSource
 extension NativeAdSample5ViewController: UICollectionViewDataSource {
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.titles.count + self.isAdReadyIntValue
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if self.isAdReady && indexPath.row == self.adAtIndex {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("UICollectionViewCell", forIndexPath: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
             cell.subviews.forEach({ (subview) in
                 subview.removeFromSuperview()
             })
-            self.showAdInCell(cell)
+            self.showAdInCell(cell: cell)
             return cell
         }
         let fixIndex = (indexPath.row < adAtIndex) ? indexPath.row : indexPath.row - self.isAdReadyIntValue;
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("YourCollectionViewCell", forIndexPath: indexPath) as! YourCollectionViewCell
-        cell.backgroundColor = UIColor.grayColor();
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YourCollectionViewCell", for: indexPath) as! YourCollectionViewCell
+        cell.backgroundColor = UIColor.gray;
         if let safeLabel = cell.textLabel,
            let safeImageView = cell.imageView {
             safeLabel.text = self.titles[fixIndex]
@@ -93,8 +93,8 @@ extension NativeAdSample5ViewController: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegateFlowLayout
 extension NativeAdSample5ViewController: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let cellWidth = CGRectGetWidth(UIScreen.mainScreen().bounds) * 0.9
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellWidth = UIScreen.main.bounds.width * 0.9
         return CGSize(width: cellWidth, height: cellWidth)
     }
     
@@ -103,30 +103,30 @@ extension NativeAdSample5ViewController: UICollectionViewDelegateFlowLayout {
 // MARK: Private Instance Method
 extension NativeAdSample5ViewController {
     
-    private func setupTitles() {
+    fileprivate func setupTitles() {
         for index in 0..<100 {
             self.titles.append("I'm index : \(index)")
         }
     }
     
-    private func loadNativaAd() {
+    fileprivate func loadNativaAd() {
         self.nativeAd.testMode = true
         self.nativeAd.apiKey = "YOUR API KEY HERE"
         self.nativeAd.delegate = self
-        self.nativeAd.loadAd()
+        self.nativeAd.load()
     }
     
-    private func showAdInCell(cell: UICollectionViewCell) {
+    fileprivate func showAdInCell(cell: UICollectionViewCell) {
         if let safeAdView = self.adView {
             cell.addSubview(safeAdView)
             
             // autolayout 設定, 固定大小, 水平垂直置中
             safeAdView.translatesAutoresizingMaskIntoConstraints = false
-            safeAdView.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: CGRectGetWidth(cell.bounds)))
-            safeAdView.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: CGRectGetHeight(cell.bounds)))
+            safeAdView.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: cell.bounds.width))
+            safeAdView.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: cell.bounds.height))
             
-            cell.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .CenterX, relatedBy: .Equal, toItem: cell, attribute: .CenterX, multiplier: 1.0, constant: 0))
-            cell.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .CenterY, relatedBy: .Equal, toItem: cell, attribute: .CenterY, multiplier: 1.0, constant: 0))
+            cell.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .centerX, relatedBy: .equal, toItem: cell, attribute: .centerX, multiplier: 1.0, constant: 0))
+            cell.addConstraint(NSLayoutConstraint(item: safeAdView, attribute: .centerY, relatedBy: .equal, toItem: cell, attribute: .centerY, multiplier: 1.0, constant: 0))
             cell.layoutIfNeeded()
         }
     }
@@ -137,32 +137,32 @@ class NativeAdSample5ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var titles: [String] = []
-    private let nativeAd = VANativeAd(placement: "VMFiveAdNetwork_NativeAdSample5", adType: kVAAdTypeVideoCard)
-    private var adView: SampleView1?
-    private var isAdReady = false
-    private var isAdReadyIntValue: Int {
+    fileprivate var titles: [String] = []
+    fileprivate let nativeAd = VANativeAd(placement: "VMFiveAdNetwork_NativeAdSample5", adType: kVAAdTypeVideoCard)
+    fileprivate var adView: SampleView1?
+    fileprivate var isAdReady = false
+    fileprivate var isAdReadyIntValue: Int {
         return (self.isAdReady == false ? 0 : 1)
     }
-    private let adAtIndex = 3
+    fileprivate let adAtIndex = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "NativeAdSample5"
         self.setupTitles()
-        self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
-        self.collectionView.registerNib(UINib(nibName: "YourCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "YourCollectionViewCell")
+        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
+        self.collectionView.register(UINib(nibName: "YourCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "YourCollectionViewCell")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.loadNativaAd()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.nativeAd.unloadAd()
+        self.nativeAd.unload()
     }
     
 }

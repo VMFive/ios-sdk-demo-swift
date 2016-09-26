@@ -10,19 +10,19 @@ import UIKit
 
 extension MoPubInterstitialSampleViewController: MPInterstitialAdControllerDelegate {
     
-    func interstitialDidLoadAd(interstitial: MPInterstitialAdController!) {
+    func interstitialDidLoadAd(_ interstitial: MPInterstitialAdController!) {
         print("\(#function)")
-        interstitial.showFromViewController(self)
+        interstitial.show(from: self)
     }
     
-    func interstitialDidFailToLoadAd(interstitial: MPInterstitialAdController!) {
+    func interstitialDidFail(toLoadAd interstitial: MPInterstitialAdController!) {
         print("\(#function)")
     }
     
-    func interstitialDidDisappear(interstitial: MPInterstitialAdController!) {
+    func interstitialDidDisappear(_ interstitial: MPInterstitialAdController!) {
         print("\(#function)")
         if let safeNavigation = self.navigationController {
-            safeNavigation.popViewControllerAnimated(true)
+            safeNavigation.popViewController(animated: true)
         }
     }
     
@@ -31,16 +31,16 @@ extension MoPubInterstitialSampleViewController: MPInterstitialAdControllerDeleg
 // MARK: Life Cycle
 class MoPubInterstitialSampleViewController: UIViewController {
     
-    private let interstitial = MPInterstitialAdController(forAdUnitId: "a50ce0f6fe844a78b7dfec85680ad603")
+    fileprivate let interstitial = MPInterstitialAdController(forAdUnitId: "a50ce0f6fe844a78b7dfec85680ad603")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Instantiate the interstitial using the class convenience method.
-        self.interstitial.delegate = self
+        self.interstitial?.delegate = self
         
         // Fetch the interstitial ad.
-        self.interstitial.loadAd()
+        self.interstitial?.loadAd()
     }
 
 }

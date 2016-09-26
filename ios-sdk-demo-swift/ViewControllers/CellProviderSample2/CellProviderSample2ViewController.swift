@@ -15,18 +15,18 @@ extension CellProviderSample2ViewController: VAAdCellProviderDataSource {
     // kVAAdCellProviderNumberOfAdsUnlimited 無限多
     // kVAAdCellProviderNumberOfAdsNotInsert 零個
     // > 1 設定數量
-    func tableView(tableView: UITableView, numberOfAdsInSection section: UInt) -> Int {
+    func tableView(_ tableView: UITableView, numberOfAdsInSection section: UInt) -> Int {
         return kVAAdCellProviderNumberOfAdsUnlimited
     }
     
     // 第一個 ad 會出現在哪一個 index
-    func tableView(tableView: UITableView, adStartRowInSection section: UInt) -> UInt {
+    func tableView(_ tableView: UITableView, adStartRowInSection section: UInt) -> UInt {
         return 0
     }
     
     // 之後的每個 ads 間隔
     // kVAAdCellProviderAdOffsetInsertOnlyOne 只插入一個
-    func tableView(tableView: UITableView, adOffsetInSection section: UInt) -> UInt {
+    func tableView(_ tableView: UITableView, adOffsetInSection section: UInt) -> UInt {
         return 4
     }
     
@@ -35,23 +35,23 @@ extension CellProviderSample2ViewController: VAAdCellProviderDataSource {
 // MARK: VAAdCellProviderDelegate
 extension CellProviderSample2ViewController: VAAdCellProviderDelegate {
     
-    func adCellProvider(adCellProvider: VAAdCellProvider, didLoadAtIndexPath indexPath: NSIndexPath) {
+    func adCellProvider(_ adCellProvider: VAAdCellProvider, didLoadAt indexPath: IndexPath) {
         print("\(#function) \(indexPath)")
     }
     
-    func adCellAtIndexPath(indexPath: NSIndexPath, didFailWithError error: NSError) {
+    func adCell(at indexPath: IndexPath, didFailWithError error: Error) {
         print("\(#function) \(error)")
     }
     
-    func adCellProvider(adCellProvider: VAAdCellProvider, didFailAtIndexPath indexPath: NSIndexPath, withError error: NSError) {
+    func adCellProvider(_ adCellProvider: VAAdCellProvider, didFailAt indexPath: IndexPath, withError error: Error) {
         print("\(#function) \(indexPath) \(error)")
     }
     
-    func adCellProviderDidClick(adCellProvider: VAAdCellProvider) {
+    func adCellProviderDidClick(_ adCellProvider: VAAdCellProvider) {
         print("\(#function)")
     }
     
-    func adCellProviderDidFinishHandlingClick(adCellProvider: VAAdCellProvider) {
+    func adCellProviderDidFinishHandlingClick(_ adCellProvider: VAAdCellProvider) {
         print("\(#function)")
     }
     
@@ -60,13 +60,13 @@ extension CellProviderSample2ViewController: VAAdCellProviderDelegate {
 // MARK: UITableViewDataSource
 extension CellProviderSample2ViewController: UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 100
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let safeAdCellProvider = self.adCellProvider {
-            let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath: safeAdCellProvider.transformToWithAdAtIndexPath(indexPath))
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: safeAdCellProvider.transformToWithAd(at: indexPath))
             cell.textLabel?.text = "index : \(indexPath.row)"
             return cell
         }
@@ -78,7 +78,7 @@ extension CellProviderSample2ViewController: UITableViewDataSource {
 // MARK: Private Instance Method
 extension CellProviderSample2ViewController {
     
-    private func retrieveSampleView3Attributes() -> VANativeAdViewAttributeObject {
+    fileprivate func retrieveSampleView3Attributes() -> VANativeAdViewAttributeObject {
         let attribute = VANativeAdViewAttributeObject();
         attribute.customAdViewClass = SampleView3.self;
         attribute.customAdViewSizeHandler = { (width, ratio) in
@@ -98,13 +98,13 @@ extension CellProviderSample2ViewController {
 class CellProviderSample2ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    private var adCellProvider: VAAdCellProvider?
+    fileprivate var adCellProvider: VAAdCellProvider?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "CellProviderSample3"
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         
         let adCellProvider = VAAdCellProvider(placement: "VMFiveAdNetwork_CellProviderSample3", adType: kVAAdTypeVideoCard, tableView: self.tableView, forAttributes: self.retrieveSampleView3Attributes())
         adCellProvider.testMode = true

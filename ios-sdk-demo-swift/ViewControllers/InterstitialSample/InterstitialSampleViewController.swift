@@ -11,25 +11,27 @@ import UIKit
 // MARK: VAAdInterstitialDelegate
 extension InterstitialSampleViewController: VAAdInterstitialDelegate {
     
-    func interstitialAdDidLoad(interstitialAd: VAAdInterstitial) {
+    func interstitialAdDidLoad(_ interstitialAd: VAAdInterstitial) {
         print("\(#function)")
-        self.interstitial.showAdFromViewController(self)
+        self.interstitial.showAd(from: self)
     }
     
-    func interstitialAdDidClick(interstitialAd: VAAdInterstitial) {
-        print("\(#function)")
-    }
-    
-    func interstitialAdWillClose(interstitialAd: VAAdInterstitial) {
+    func interstitialAdDidClick(_ interstitialAd: VAAdInterstitial) {
         print("\(#function)")
     }
     
-    func interstitialAdDidClose(interstitialAd: VAAdInterstitial) {
+    func interstitialAdWillClose(_ interstitialAd: VAAdInterstitial) {
         print("\(#function)")
-        self.navigationController?.popViewControllerAnimated(true)
     }
     
-    func interstitialAd(interstitialAd: VAAdInterstitial, didFailWithError error: NSError) {
+    func interstitialAdDidClose(_ interstitialAd: VAAdInterstitial) {
+        print("\(#function)")
+        if let safeNavigationController = self.navigationController {
+            safeNavigationController.popViewController(animated: true)
+        }
+    }
+    
+    func interstitialAd(_ interstitialAd: VAAdInterstitial, didFailWithError error: Error) {
         print("\(#function) \(error)")
     }
     
@@ -38,7 +40,7 @@ extension InterstitialSampleViewController: VAAdInterstitialDelegate {
 // MARK: Life Cycle
 class InterstitialSampleViewController: UIViewController {
     
-    private let interstitial = VAAdInterstitial(placement: "VMFiveAdNetwork_InterstitialSample", adType: kVAAdTypeVideoInterstitial)
+    fileprivate let interstitial = VAAdInterstitial(placement: "VMFiveAdNetwork_InterstitialSample", adType: kVAAdTypeVideoInterstitial)
 
     override func viewDidLoad() {
         super.viewDidLoad()

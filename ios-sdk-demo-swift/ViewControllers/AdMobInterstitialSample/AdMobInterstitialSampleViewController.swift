@@ -11,19 +11,19 @@ import GoogleMobileAds
 
 extension AdMobInterstitialSampleViewController: GADInterstitialDelegate {
     
-    func interstitialDidReceiveAd(ad: GADInterstitial!) {
+    func interstitialDidReceiveAd(_ ad: GADInterstitial!) {
         print("\(#function)")
-        ad.presentFromRootViewController(self)
+        ad.present(fromRootViewController: self)
     }
     
-    func interstitial(ad: GADInterstitial!, didFailToReceiveAdWithError error: GADRequestError!) {
+    func interstitial(_ ad: GADInterstitial!, didFailToReceiveAdWithError error: GADRequestError!) {
         print("\(#function) \(error)")
     }
     
-    func interstitialDidDismissScreen(ad: GADInterstitial!) {
+    func interstitialDidDismissScreen(_ ad: GADInterstitial!) {
         print("\(#function)")
         if let safeNavigation = self.navigationController {
-            safeNavigation.popViewControllerAnimated(true)
+            safeNavigation.popViewController(animated: true)
         }
     }
     
@@ -32,7 +32,7 @@ extension AdMobInterstitialSampleViewController: GADInterstitialDelegate {
 // MARK: Life Cycle
 class AdMobInterstitialSampleViewController: UIViewController {
     
-    private let interstitial = GADInterstitial(adUnitID: "ca-app-pub-4125394451256992/6223564062")
+    fileprivate let interstitial = GADInterstitial(adUnitID: "ca-app-pub-4125394451256992/6223564062")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +45,9 @@ class AdMobInterstitialSampleViewController: UIViewController {
         // Label必須與後台所設定的CustomEvent Label相同
         // testMode參數為非必要（此部份可跳過），若未設定testMode，後台需設定API Key
         let extra = GADCustomEventExtras()
-        extra.setExtras([ "testMode": NSNumber(bool: true) ], forLabel: "VMFCustomInterstitial")
-        request.registerAdNetworkExtras(extra)
-        self.interstitial.loadRequest(request)
+        extra.setExtras([ "testMode": NSNumber(value: true) ], forLabel: "VMFCustomInterstitial")
+        request.register(extra)
+        self.interstitial.load(request)
     }
 
 }

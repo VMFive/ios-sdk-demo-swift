@@ -11,7 +11,7 @@ import GoogleMobileAds
 
 extension AdMobBannerSampleViewController: GADBannerViewDelegate {
     
-    func adViewDidReceiveAd(bannerView: GADBannerView!) {
+    func adViewDidReceiveAd(_ bannerView: GADBannerView!) {
         print("\(#function)")
         
         if self.bannerView.superview == nil {
@@ -20,15 +20,15 @@ extension AdMobBannerSampleViewController: GADBannerViewDelegate {
         
         // autolayout 設定, 固定大小, 水平置中, 貼底
         self.bannerView.translatesAutoresizingMaskIntoConstraints = false;
-        self.bannerView.addConstraint(NSLayoutConstraint(item: self.bannerView, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: CGRectGetWidth(self.bannerView.bounds)))
-        self.bannerView.addConstraint(NSLayoutConstraint(item: self.bannerView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: CGRectGetHeight(self.bannerView.bounds)))
+        self.bannerView.addConstraint(NSLayoutConstraint(item: self.bannerView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: self.bannerView.bounds.width))
+        self.bannerView.addConstraint(NSLayoutConstraint(item: self.bannerView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: self.bannerView.bounds.height))
         
-        self.view.addConstraint(NSLayoutConstraint(item: self.bannerView, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1.0, constant: 0))
-        self.view.addConstraint(NSLayoutConstraint(item: self.bannerView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0))
+        self.view.addConstraint(NSLayoutConstraint(item: self.bannerView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0))
+        self.view.addConstraint(NSLayoutConstraint(item: self.bannerView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0))
         self.view.layoutIfNeeded()
     }
     
-    func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+    func adView(_ bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
         print("\(#function) \(error)")
     }
     
@@ -37,7 +37,7 @@ extension AdMobBannerSampleViewController: GADBannerViewDelegate {
 // MARK: Life Cycle
 class AdMobBannerSampleViewController: UIViewController {
     
-    private let bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+    fileprivate let bannerView = GADBannerView(adSize: kGADAdSizeBanner)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +54,10 @@ class AdMobBannerSampleViewController: UIViewController {
         // forLabel後得字串必須與後台所設定的CustomEvent Label相同
         // testMode參數為非必要（此部份可跳過），若未設定testMode，後台需設定API Key
         let extra = GADCustomEventExtras()
-        extra.setExtras([ "testMode": NSNumber(bool: true) ], forLabel: "VMFCustomBanner")
-        request.registerAdNetworkExtras(extra)
+        extra.setExtras([ "testMode": NSNumber(value: true) ], forLabel: "VMFCustomBanner")
+        request.register(extra)
         
-        self.bannerView.loadRequest(request)
+        self.bannerView.load(request)
     }
 
 }
