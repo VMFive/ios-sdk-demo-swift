@@ -19,6 +19,6 @@
 
 @property (nonatomic, strong) VAAdView *vfBanner;
 
-+ (NSString *)version;
++(NSString *)version;
 
 @end

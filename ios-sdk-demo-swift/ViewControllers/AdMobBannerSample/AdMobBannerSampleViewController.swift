@@ -54,7 +54,7 @@ class AdMobBannerSampleViewController: UIViewController {
         // forLabel後得字串必須與後台所設定的CustomEvent Label相同
         // testMode參數為非必要（此部份可跳過），若未設定testMode，後台需設定API Key
         let extra = GADCustomEventExtras()
-        extra.setExtras([ "testMode": NSNumber(value: true) ], forLabel: "VMFCustomBanner")
+        extra.setExtras([ "testMode": NSNumber(value: true), "placement": "yourplacement", "apiKey": "yourapikey" ], forLabel: "VMFCustomBanner")
         request.register(extra)
         
         self.bannerView.load(request)

@@ -15,12 +15,10 @@
 #import "VAAdInterstitial.h"
 #endif
 
-
-
 @interface VMFiveCustomInterstitial : NSObject <GADCustomEventInterstitial, VAAdInterstitialDelegate>
 
 @property (nonatomic, strong) VAAdInterstitial *vfInterstital;
 
-+ (NSString *)version;
++(NSString *)version;
 
 @end

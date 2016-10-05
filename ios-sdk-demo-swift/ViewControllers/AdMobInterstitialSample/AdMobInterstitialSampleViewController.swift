@@ -45,7 +45,7 @@ class AdMobInterstitialSampleViewController: UIViewController {
         // Label必須與後台所設定的CustomEvent Label相同
         // testMode參數為非必要（此部份可跳過），若未設定testMode，後台需設定API Key
         let extra = GADCustomEventExtras()
-        extra.setExtras([ "testMode": NSNumber(value: true) ], forLabel: "VMFCustomInterstitial")
+        extra.setExtras([ "testMode": NSNumber(value: true), "placement": "yourplacement", "apiKey": "yourapikey" ], forLabel: "VMFCustomInterstitial")
         request.register(extra)
         self.interstitial.load(request)
     }
