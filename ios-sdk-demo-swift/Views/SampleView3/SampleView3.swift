@@ -23,6 +23,10 @@ extension SampleView3: VANativeAdViewRenderProtocol {
         return self.titleLabel ?? UILabel()
     }
     
+    func nativeCallToActionTextLabel() -> UILabel {
+        return self.ctaLabel
+    }
+    
     func clickableViews() -> [Any] {
         if let safeCtaButton = self.ctaButton {
             return [ safeCtaButton ]
@@ -72,6 +76,17 @@ extension SampleView3 {
     
 }
 
+// MARK: KVO
+extension SampleView3 {
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let safeChange = change, let newValue = safeChange[.newKey] as? String, let safeButton = self.ctaButton, keyPath == "ctaLabel.text" {
+            safeButton.setTitle(newValue, for: .normal)
+        }
+    }
+    
+}
+
 // MARK: Life Cycle
 class SampleView3: UIView {
     
@@ -80,13 +95,20 @@ class SampleView3: UIView {
     var titleLabel: UILabel?
     var ctaButton: UIButton?
     
+    let ctaLabel = UILabel()
+    
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 320, height: 210))
         self.defaultLayout()
+        self.addObserver(self, forKeyPath: "ctaLabel.text", options: .new, context: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        self.removeObserver(self, forKeyPath: "ctaLabel.text", context: nil)
     }
 
 }
