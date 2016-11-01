@@ -61,16 +61,30 @@ extension CellProviderSample2ViewController: VAAdCellProviderDelegate {
 extension CellProviderSample2ViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return self.items.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath: indexPath)
+        cell.textLabel?.text = "item : \(self.items[indexPath.row])"
+        return cell
+    }
+    
+}
+
+extension CellProviderSample2ViewController: UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.beginUpdates()
+        
         if let safeAdCellProvider = self.adCellProvider {
-            let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath: safeAdCellProvider.transformToWithAdAtIndexPath(indexPath))
-            cell.textLabel?.text = "index : \(indexPath.row)"
-            return cell
+            let fixIndexPath = safeAdCellProvider.transformToWithAdAtIndexPath(indexPath);
+            tableView.deleteRowsAtIndexPaths([ fixIndexPath ], withRowAnimation: .Fade)
+            self.items.removeAtIndex(indexPath.row);
         }
-        return UITableViewCell()
+        
+        tableView.endUpdates()
     }
     
 }
@@ -99,9 +113,14 @@ class CellProviderSample2ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     private var adCellProvider: VAAdCellProvider?
+    private var items = [Int]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for index in 0..<100 {
+            self.items.append(index)
+        }
         
         self.title = "CellProviderSample3"
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
