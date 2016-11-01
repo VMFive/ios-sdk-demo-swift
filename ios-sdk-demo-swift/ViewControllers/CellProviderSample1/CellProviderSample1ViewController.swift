@@ -277,7 +277,7 @@ class CellProviderSample1ViewController: UIViewController {
     var pets: [[String: String]] = []
     let imageCache = NSCache()
     let rowHeight = NSCache()
-    let dummyCell: NoteTableViewCell = NSBundle.mainBundle().loadNibNamed("NoteTableViewCell", owner: nil, options: nil)[0] as! NoteTableViewCell
+    let dummyCell: NoteTableViewCell = NSBundle.mainBundle().loadNibNamed("NoteTableViewCell", owner: nil, options: nil)![0] as! NoteTableViewCell
 
     override func viewDidLoad() {
         super.viewDidLoad()
