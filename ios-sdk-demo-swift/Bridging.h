@@ -7,7 +7,7 @@
 //
 
 #import <VMFiveAdNetwork/VMFiveAdNetwork.h>
-@import mopub_ios_sdk;
+@import MoPub;
 #import "NewController.h"
 #import "VANativeAd+FullscreenIcon.h"
 #import "VANativeAd+IconAlignment.h"

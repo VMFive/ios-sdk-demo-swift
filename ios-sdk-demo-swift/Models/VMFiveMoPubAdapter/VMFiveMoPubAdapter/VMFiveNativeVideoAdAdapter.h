@@ -6,7 +6,7 @@
 //  Copyright © 2015 MoPub. All rights reserved.
 //
 
-@import mopub_ios_sdk;
+@import MoPub;
 
 @class VANativeAd;
 @interface VMFiveNativeVideoAdAdapter : NSObject <MPNativeAdAdapter>
@@ -15,12 +15,13 @@
 @property (nonatomic, readonly) NSArray *impressionTrackerURLs;
 @property (nonatomic, readonly) NSArray *clickTrackerURLs;
 
++ (NSString *)version;
+
 - (instancetype)initWithNativeAd:(VANativeAd *)natvieAd withOtherInfos:(NSDictionary *)otherInfos;
 - (instancetype)initWithAdProperties:(NSMutableDictionary *)properties;
 
 - (void)handleVideoViewImpression;
 - (void)handleVideoViewClick;
-
 - (void)handleVideoHasProgressedToTime:(NSTimeInterval)playbackTime;
 
 @end

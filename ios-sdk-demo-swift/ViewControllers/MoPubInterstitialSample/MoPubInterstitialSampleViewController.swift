@@ -24,6 +24,7 @@ extension MoPubInterstitialSampleViewController: MPInterstitialAdControllerDeleg
         if let safeNavigation = self.navigationController {
             safeNavigation.popViewController(animated: true)
         }
+        MPInterstitialAdController.removeSharedInterstitialAdController(interstitial)
     }
     
 }

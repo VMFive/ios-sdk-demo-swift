@@ -7,9 +7,9 @@ inhibit_all_warnings!
 target 'ios-sdk-demo-swift' do
     project 'ios-sdk-demo-swift'
     
-    pod 'VMFiveAdNetwork', '~> 3.1.1'
+    pod 'VMFiveAdNetwork', '~> 3.1.2'
     pod 'GoogleMobileAds', '~> 7.8.0'
-    pod 'mopub-ios-sdk', '~> 4.7.0'
+    pod 'mopub-ios-sdk', '~> 4.12.0'
     
 end
 

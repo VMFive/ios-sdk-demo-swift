@@ -6,7 +6,7 @@
 //  Copyright © 2015 MoPub. All rights reserved.
 //
 
-@import mopub_ios_sdk;
+@import MoPub;
 
 @interface VMFiveNativeVideoCustomEvent : MPNativeCustomEvent
 

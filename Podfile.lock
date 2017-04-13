@@ -1,23 +1,23 @@
 PODS:
   - ComScore (5.1.11)
   - GoogleMobileAds (7.8.0)
-  - mopub-ios-sdk (4.7.0):
-    - mopub-ios-sdk/MoPubSDK (= 4.7.0)
-  - mopub-ios-sdk/MoPubSDK (4.7.0)
-  - VMFiveAdNetwork (3.1.1):
+  - mopub-ios-sdk (4.12.0):
+    - mopub-ios-sdk/MoPubSDK (= 4.12.0)
+  - mopub-ios-sdk/MoPubSDK (4.12.0)
+  - VMFiveAdNetwork (3.1.2):
     - ComScore (~> 5.1.11)
 
 DEPENDENCIES:
   - GoogleMobileAds (~> 7.8.0)
-  - mopub-ios-sdk (~> 4.7.0)
-  - VMFiveAdNetwork (~> 3.1.1)
+  - mopub-ios-sdk (~> 4.12.0)
+  - VMFiveAdNetwork (~> 3.1.2)
 
 SPEC CHECKSUMS:
   ComScore: 637573f58747fc31d53a77bf989bde5d3c79d054
   GoogleMobileAds: c79931d6eef16b1e4c35d331cf23c47e0dd490d2
-  mopub-ios-sdk: e46b277cdb77b1745567b419742f77fed6865262
-  VMFiveAdNetwork: 5d86135e48f3f5568b51d9732244dde0c3314a80
+  mopub-ios-sdk: f1223e3f54a4ff68394f4fd9e42651801cf09704
+  VMFiveAdNetwork: ebeb8dd7064a1a7cd33bfc035be4524a0efa8287
 
-PODFILE CHECKSUM: ff553210fbc995274d665e59a43e7fdcc4ea9ccc
+PODFILE CHECKSUM: 38e361786ccbd8fd42fa7c4f22b57d2185ed1b1b
 
 COCOAPODS: 1.1.1

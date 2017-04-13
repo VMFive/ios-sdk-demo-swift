@@ -12,6 +12,7 @@
 #import "math.h"
 #import "NSJSONSerialization+MPAdditions.h"
 #import "MPRewardedVideoReward.h"
+#import "MPVASTTrackingEvent.h"
 
 NSString * const kAdTypeHeaderKey = @"X-Adtype";
 NSString * const kAdUnitWarmingUpHeaderKey = @"X-Warmup";
@@ -34,6 +35,8 @@ NSString * const kWidthHeaderKey = @"X-Width";
 NSString * const kDspCreativeIdKey = @"X-DspCreativeid";
 NSString * const kPrecacheRequiredKey = @"X-PrecacheRequired";
 NSString * const kIsVastVideoPlayerKey = @"X-VastVideoPlayer";
+//TODO: Remove `kForceUIWebViewKey` once WKWebView is proven
+NSString * const kForceUIWebViewKey = @"X-ForceUIWebView";
 
 NSString * const kInterstitialAdTypeHeaderKey = @"X-Fulladtype";
 NSString * const kOrientationTypeHeaderKey = @"X-Orientation";
@@ -43,6 +46,7 @@ NSString * const kNativeVideoPauseVisiblePercentHeaderKey = @"X-Pause-Visible-Pe
 NSString * const kNativeVideoImpressionMinVisiblePercentHeaderKey = @"X-Impression-Min-Visible-Percent";
 NSString * const kNativeVideoImpressionVisibleMsHeaderKey = @"X-Impression-Visible-Ms";
 NSString * const kNativeVideoMaxBufferingTimeMsHeaderKey = @"X-Max-Buffer-Ms";
+NSString * const kNativeVideoTrackersHeaderKey = @"X-Video-Trackers";
 
 NSString * const kAdTypeHtml = @"html";
 NSString * const kAdTypeInterstitial = @"interstitial";
@@ -55,6 +59,18 @@ NSString * const kAdTypeNativeVideo = @"json_video";
 NSString * const kRewardedVideoCurrencyNameHeaderKey = @"X-Rewarded-Video-Currency-Name";
 NSString * const kRewardedVideoCurrencyAmountHeaderKey = @"X-Rewarded-Video-Currency-Amount";
 NSString * const kRewardedVideoCompletionUrlHeaderKey = @"X-Rewarded-Video-Completion-Url";
+
+// rewarded playables
+NSString * const kRewardedPlayableDurationHeaderKey = @"X-Rewarded-Duration";
+NSString * const kRewardedPlayableRewardOnClickHeaderKey = @"X-Should-Reward-On-Click";
+
+// native video
+NSString * const kNativeVideoTrackerUrlMacro = @"%%VIDEO_EVENT%%";
+NSString * const kNativeVideoTrackerEventsHeaderKey = @"events";
+NSString * const kNativeVideoTrackerUrlsHeaderKey = @"urls";
+NSString * const kNativeVideoTrackerEventDictionaryKey = @"event";
+NSString * const kNativeVideoTrackerTextDictionaryKey = @"text";
+
 
 @interface MPAdConfiguration ()
 
@@ -102,7 +118,7 @@ NSString * const kRewardedVideoCompletionUrlHeaderKey = @"X-Rewarded-Video-Compl
         self.shouldInterceptLinks = shouldInterceptLinks ? [shouldInterceptLinks boolValue] : YES;
         self.scrollable = [[headers objectForKey:kScrollableHeaderKey] boolValue];
         self.refreshInterval = [self refreshIntervalFromHeaders:headers];
-        self.adTimeoutInterval = [self adTimeoutIntervalFromHeaders:headers];
+        self.adTimeoutInterval = [self timeIntervalFromHeaders:headers forKey:kAdTimeoutHeaderKey];
 
 
         self.nativeSDKParameters = [self dictionaryFromHeaders:headers
@@ -121,6 +137,8 @@ NSString * const kRewardedVideoCompletionUrlHeaderKey = @"X-Rewarded-Video-Compl
 
         self.isVastVideoPlayer = [[headers objectForKey:kIsVastVideoPlayerKey] boolValue];
 
+        self.forceUIWebView = [[headers objectForKey:kForceUIWebViewKey] boolValue];
+
         self.creationTimestamp = [NSDate date];
 
         self.creativeId = [headers objectForKey:kCreativeIdHeaderKey];
@@ -137,6 +155,9 @@ NSString * const kRewardedVideoCompletionUrlHeaderKey = @"X-Rewarded-Video-Compl
 
         self.nativeVideoMaxBufferingTime = [self timeIntervalFromMsHeaders:headers forKey:kNativeVideoMaxBufferingTimeMsHeaderKey];
 
+        self.nativeVideoTrackers = [self nativeVideoTrackersFromHeaders:headers key:kNativeVideoTrackersHeaderKey];
+
+
         // rewarded video
         NSString *currencyName = [headers objectForKey:kRewardedVideoCurrencyNameHeaderKey];
         NSNumber *currencyAmount = [self adAmountFromHeaders:headers key:kRewardedVideoCurrencyAmountHeaderKey];
@@ -150,6 +171,10 @@ NSString * const kRewardedVideoCompletionUrlHeaderKey = @"X-Rewarded-Video-Compl
         }
 
         self.rewardedVideoCompletionUrl = [headers objectForKey:kRewardedVideoCompletionUrlHeaderKey];
+
+        // rewarded playables
+        self.rewardedPlayableDuration = [self timeIntervalFromHeaders:headers forKey:kRewardedPlayableDurationHeaderKey];
+        self.rewardedPlayableShouldRewardOnClick = [[headers objectForKey:kRewardedPlayableRewardOnClickHeaderKey] boolValue];
     }
     return self;
 }
@@ -160,7 +185,6 @@ NSString * const kRewardedVideoCompletionUrlHeaderKey = @"X-Rewarded-Video-Compl
 
     NSMutableDictionary *convertedCustomEvents = [NSMutableDictionary dictionary];
     if (self.adType == MPAdTypeBanner) {
-        [convertedCustomEvents setObject:@"MPiAdBannerCustomEvent" forKey:@"iAd"];
         [convertedCustomEvents setObject:@"MPGoogleAdMobBannerCustomEvent" forKey:@"admob_native"];
         [convertedCustomEvents setObject:@"MPMillennialBannerCustomEvent" forKey:@"millennial_native"];
         [convertedCustomEvents setObject:@"MPHTMLBannerCustomEvent" forKey:@"html"];
@@ -168,12 +192,12 @@ NSString * const kRewardedVideoCompletionUrlHeaderKey = @"X-Rewarded-Video-Compl
         [convertedCustomEvents setObject:@"MOPUBNativeVideoCustomEvent" forKey:@"json_video"];
         [convertedCustomEvents setObject:@"MPMoPubNativeCustomEvent" forKey:@"json"];
     } else if (self.adType == MPAdTypeInterstitial) {
-        [convertedCustomEvents setObject:@"MPiAdInterstitialCustomEvent" forKey:@"iAd_full"];
         [convertedCustomEvents setObject:@"MPGoogleAdMobInterstitialCustomEvent" forKey:@"admob_full"];
         [convertedCustomEvents setObject:@"MPMillennialInterstitialCustomEvent" forKey:@"millennial_full"];
         [convertedCustomEvents setObject:@"MPHTMLInterstitialCustomEvent" forKey:@"html"];
         [convertedCustomEvents setObject:@"MPMRAIDInterstitialCustomEvent" forKey:@"mraid"];
         [convertedCustomEvents setObject:@"MPMoPubRewardedVideoCustomEvent" forKey:@"rewarded_video"];
+        [convertedCustomEvents setObject:@"MPMoPubRewardedPlayableCustomEvent" forKey:@"rewarded_playable"];
     }
     if ([convertedCustomEvents objectForKey:self.networkType]) {
         customEventClassName = [convertedCustomEvents objectForKey:self.networkType];
@@ -226,7 +250,7 @@ NSString * const kRewardedVideoCompletionUrlHeaderKey = @"X-Rewarded-Video-Compl
 {
     NSString *adTypeString = [headers objectForKey:kAdTypeHeaderKey];
 
-    if ([adTypeString isEqualToString:@"interstitial"] || [adTypeString isEqualToString:@"rewarded_video"]) {
+    if ([adTypeString isEqualToString:@"interstitial"] || [adTypeString isEqualToString:@"rewarded_video"] || [adTypeString isEqualToString:@"rewarded_playable"]) {
         return MPAdTypeInterstitial;
     } else if (adTypeString &&
                [headers objectForKey:kOrientationTypeHeaderKey]) {
@@ -277,6 +301,21 @@ NSString * const kRewardedVideoCompletionUrlHeaderKey = @"X-Rewarded-Video-Compl
     return interval;
 }
 
+- (NSTimeInterval)timeIntervalFromHeaders:(NSDictionary *)headers forKey:(NSString *)key
+{
+    NSString *intervalString = [headers objectForKey:key];
+    NSTimeInterval interval = -1;
+    if (intervalString) {
+        int parsedInt = -1;
+        BOOL isNumber = [[NSScanner scannerWithString:intervalString] scanInt:&parsedInt];
+        if (isNumber && parsedInt >= 0) {
+            interval = parsedInt;
+        }
+    }
+
+    return interval;
+}
+
 - (NSTimeInterval)timeIntervalFromMsHeaders:(NSDictionary *)headers forKey:(NSString *)key
 {
     NSString *msString = [headers objectForKey:key];
@@ -307,21 +346,6 @@ NSString * const kRewardedVideoCompletionUrlHeaderKey = @"X-Rewarded-Video-Compl
     return percent;
 }
 
-- (NSTimeInterval)adTimeoutIntervalFromHeaders:(NSDictionary *)headers
-{
-    NSString *intervalString = [headers objectForKey:kAdTimeoutHeaderKey];
-    NSTimeInterval interval = -1;
-    if (intervalString) {
-        int parsedInt = -1;
-        BOOL isNumber = [[NSScanner scannerWithString:intervalString] scanInt:&parsedInt];
-        if (isNumber && parsedInt >= 0) {
-            interval = parsedInt;
-        }
-    }
-
-    return interval;
-}
-
 - (NSNumber *)adAmountFromHeaders:(NSDictionary *)headers key:(NSString *)key
 {
     NSString *amountString = [headers objectForKey:key];
@@ -346,6 +370,43 @@ NSString * const kRewardedVideoCompletionUrlHeaderKey = @"X-Rewarded-Video-Compl
         return MPInterstitialOrientationTypeLandscape;
     } else {
         return MPInterstitialOrientationTypeAll;
+    }
+}
+
+- (NSDictionary *)nativeVideoTrackersFromHeaders:(NSDictionary *)headers key:(NSString *)key
+{
+    NSDictionary *dictFromHeader = [self dictionaryFromHeaders:headers forKey:key];
+    if (!dictFromHeader) {
+        return nil;
+    }
+    NSMutableDictionary *videoTrackerDict = [NSMutableDictionary new];
+    NSArray *events = dictFromHeader[kNativeVideoTrackerEventsHeaderKey];
+    NSArray *urls = dictFromHeader[kNativeVideoTrackerUrlsHeaderKey];
+    NSSet *supportedEvents = [NSSet setWithObjects:MPVASTTrackingEventTypeStart, MPVASTTrackingEventTypeFirstQuartile, MPVASTTrackingEventTypeMidpoint,  MPVASTTrackingEventTypeThirdQuartile, MPVASTTrackingEventTypeComplete, nil];
+    for (NSString *event in events) {
+        if (![supportedEvents containsObject:event]) {
+            continue;
+        }
+        [self setVideoTrackers:videoTrackerDict event:event urls:urls];
+    }
+    if (videoTrackerDict.count == 0) {
+        return nil;
+    }
+    return videoTrackerDict;
+}
+
+- (void)setVideoTrackers:(NSMutableDictionary *)videoTrackerDict event:(NSString *)event urls:(NSArray *)urls {
+    NSMutableArray *trackers = [NSMutableArray new];
+    for (NSString *url in urls) {
+        if ([url rangeOfString:kNativeVideoTrackerUrlMacro].location != NSNotFound) {
+            NSString *trackerUrl = [url stringByReplacingOccurrencesOfString:kNativeVideoTrackerUrlMacro withString:event];
+            NSDictionary *dict = @{kNativeVideoTrackerEventDictionaryKey:event, kNativeVideoTrackerTextDictionaryKey:trackerUrl};
+            MPVASTTrackingEvent *tracker = [[MPVASTTrackingEvent alloc] initWithDictionary:dict];
+            [trackers addObject:tracker];
+        }
+    }
+    if (trackers.count > 0) {
+        videoTrackerDict[event] = trackers;
     }
 }
 
