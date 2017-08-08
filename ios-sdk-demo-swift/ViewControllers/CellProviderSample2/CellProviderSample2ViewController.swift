@@ -21,13 +21,13 @@ extension CellProviderSample2ViewController: VAAdCellProviderDataSource {
     
     // 第一個 ad 會出現在哪一個 index
     func tableView(_ tableView: UITableView, adStartRowInSection section: UInt) -> UInt {
-        return 0
+        return 10
     }
     
     // 之後的每個 ads 間隔
     // kVAAdCellProviderAdOffsetInsertOnlyOne 只插入一個
     func tableView(_ tableView: UITableView, adOffsetInSection section: UInt) -> UInt {
-        return 4
+        return 10
     }
     
 }
@@ -61,13 +61,20 @@ extension CellProviderSample2ViewController: VAAdCellProviderDelegate {
 extension CellProviderSample2ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return self.rowCount + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let safeAdCellProvider = self.adCellProvider {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: safeAdCellProvider.transformToWithAd(at: indexPath))
-            cell.textLabel?.text = "index : \(indexPath.row)"
+            cell.backgroundColor = UIColor.white
+            
+            if indexPath.row == 0 {
+                cell.backgroundColor = UIColor.black
+            }
+            else {
+                cell.textLabel?.text = "index : \(indexPath.row - 1)"
+            }
             return cell
         }
         return UITableViewCell()
@@ -99,6 +106,7 @@ class CellProviderSample2ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     fileprivate var adCellProvider: VAAdCellProvider?
+    fileprivate var rowCount = 30
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,6 +119,15 @@ class CellProviderSample2ViewController: UIViewController {
         adCellProvider.apiKey = "YOUR API KEY"
         adCellProvider.loadAds()
         self.adCellProvider = adCellProvider
+        
+        DispatchQueue.global(qos: .default).async {
+            Thread.sleep(forTimeInterval: 10)
+            DispatchQueue.main.async {
+                print("RELOAD TABLE")
+                self.rowCount = 10
+                self.tableView.reloadData()
+            }
+        }
     }
 
 }
