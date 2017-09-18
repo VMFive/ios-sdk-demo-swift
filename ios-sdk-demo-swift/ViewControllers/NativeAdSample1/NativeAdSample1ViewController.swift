@@ -12,7 +12,7 @@ import UIKit
 extension NativeAdSample1ViewController: VANativeAdDelegate {
     
     func nativeAdDidLoad(_ nativeAd: VANativeAd) {
-        if let safeAdView = self.adView {
+        if let safeAdView = self.adView as? UIView & VANativeAdViewRenderProtocol {
             
             // AdView存在時，可以直接將AdView帶入進行Rendering
             let render = VANativeAdViewRender(nativeAd: nativeAd, customAdView: safeAdView)

@@ -70,8 +70,8 @@ class MoPubNativeAdSampleViewController: UIViewController {
         let adRequest: MPNativeAdRequest = MPNativeAdRequest(adUnitIdentifier: "7091c47489aa4796a44ff0802098adb8", rendererConfigurations: [nativeVideoConfig])
         adRequest.start(completionHandler: { (request, response, error) -> Void in
             
-            if error != nil {
-                print("================> \(error)")
+            if let safeError = error {
+                print("================> \(safeError)")
             }
             else {
                 response?.delegate = self

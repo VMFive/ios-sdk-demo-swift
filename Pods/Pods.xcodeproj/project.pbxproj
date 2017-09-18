@@ -425,7 +425,7 @@
 		1434E7992A433B5D07D7E8EE3634647E /* MOPUBFullscreenPlayerViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MOPUBFullscreenPlayerViewController.m; path = MoPubSDK/NativeVideo/Internal/MOPUBFullscreenPlayerViewController.m; sourceTree = "<group>"; };
 		1484DDCFC85637E8B5F9CD05A700AE9A /* SCORConfigurationType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SCORConfigurationType.h; path = ComScore/iOS/ComScore.framework/Versions/A/Headers/SCORConfigurationType.h; sourceTree = "<group>"; };
 		15D330EFFB9B056283C539DABD12DDC7 /* MPBannerCustomEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPBannerCustomEvent.h; path = MoPubSDK/MPBannerCustomEvent.h; sourceTree = "<group>"; };
-		17918BAF4E7B1FD406560F3EE32FAA56 /* MoPub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MoPub.framework; path = "mopub-ios-sdk.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17918BAF4E7B1FD406560F3EE32FAA56 /* MoPub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoPub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EFC2326D2EC05B7C900A7DFB8B5F6F /* MPStreamAdPlacer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPStreamAdPlacer.m; path = "MoPubSDK/Native Ads/MPStreamAdPlacer.m"; sourceTree = "<group>"; };
 		1912B1E36CAA8E577F233BE9B931B698 /* MPRewardedVideoAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPRewardedVideoAdapter.h; path = MoPubSDK/RewardedVideo/Internal/MPRewardedVideoAdapter.h; sourceTree = "<group>"; };
 		193ABE14B497457C6898BA63056D8C29 /* MPStoreKitProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPStoreKitProvider.h; path = MoPubSDK/Internal/Utility/MPStoreKitProvider.h; sourceTree = "<group>"; };
@@ -649,7 +649,7 @@
 		922EA9F6C45DE3E06550A020EA9D2281 /* MPStreamAdPlacementData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPStreamAdPlacementData.m; path = "MoPubSDK/Native Ads/MPStreamAdPlacementData.m"; sourceTree = "<group>"; };
 		92743B257258C51ED70E0F4B6A1B9DB0 /* MPQRunLoopOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPQRunLoopOperation.m; path = "MoPubSDK/Internal/Event Logging/MPQRunLoopOperation.m"; sourceTree = "<group>"; };
 		927F236B9BA30BAE18018FEACED71AB1 /* MPVASTDurationOffset.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPVASTDurationOffset.h; path = MoPubSDK/Internal/VAST/MPVASTDurationOffset.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		945CB10FA71E47AB2C91AE453423F951 /* MRVideoPlayerManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MRVideoPlayerManager.m; path = MoPubSDK/Internal/MRAID/MRVideoPlayerManager.m; sourceTree = "<group>"; };
 		947049B9AC58322CBDEC4131138194FA /* MPTableViewAdPlacer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPTableViewAdPlacer.h; path = "MoPubSDK/Native Ads/MPTableViewAdPlacer.h"; sourceTree = "<group>"; };
 		95508678BC40FBE02B3E3FF874C6E7BE /* MPVASTModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPVASTModel.h; path = MoPubSDK/Internal/VAST/MPVASTModel.h; sourceTree = "<group>"; };
@@ -712,7 +712,7 @@
 		B77F602CD8C4D81C5C1FC270F249F64E /* SCORPublisherConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SCORPublisherConfiguration.h; path = ComScore/iOS/ComScore.framework/Versions/A/Headers/SCORPublisherConfiguration.h; sourceTree = "<group>"; };
 		B7CEF6A5353F7B6EC880B51D31563A21 /* MPNativePositionResponseDeserializer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPNativePositionResponseDeserializer.m; path = "MoPubSDK/Native Ads/Internal/MPNativePositionResponseDeserializer.m"; sourceTree = "<group>"; };
 		B7F561ED1FAE06690CFEAB128BD26621 /* MPMoPubNativeAdAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPMoPubNativeAdAdapter.h; path = "MoPubSDK/Native Ads/Internal/MPMoPubNativeAdAdapter.h"; sourceTree = "<group>"; };
-		B9AF2A4A6696771EC435AD14404C45C2 /* mopub-ios-sdk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "mopub-ios-sdk.modulemap"; sourceTree = "<group>"; };
+		B9AF2A4A6696771EC435AD14404C45C2 /* mopub-ios-sdk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "mopub-ios-sdk.modulemap"; sourceTree = "<group>"; };
 		BC0D54721F2BCF19730DB7E6BBE195EE /* VANativeAds.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VANativeAds.h; path = VMFiveAdNetwork/VMFiveAdNetwork/VANativeAds.h; sourceTree = "<group>"; };
 		BC48B4CABBB227B8A914C3F8066B04D2 /* MPURLResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPURLResolver.h; path = MoPubSDK/Internal/Common/MPURLResolver.h; sourceTree = "<group>"; };
 		C167F8CC2D40EE508EC26F56525EACC5 /* NSHTTPURLResponse+MPAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSHTTPURLResponse+MPAdditions.m"; path = "MoPubSDK/Internal/Utility/Categories/NSHTTPURLResponse+MPAdditions.m"; sourceTree = "<group>"; };
@@ -771,14 +771,14 @@
 		DABFF4DCCE1091976B492D82EBE8A175 /* MPMutedBtn.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = MPMutedBtn.png; path = MoPubSDK/Resources/MPMutedBtn.png; sourceTree = "<group>"; };
 		DAC97C7AB2D4544AB1803493A6F97E42 /* MPNativeAdSourceQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPNativeAdSourceQueue.m; path = "MoPubSDK/Native Ads/Internal/MPNativeAdSourceQueue.m"; sourceTree = "<group>"; };
 		DB13A990C5DAD6B7AFC8EB8B2D90BF3D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
-		DB3E70DEF42913C4AB0082C16DA94E48 /* MPCountdownTimer.html */ = {isa = PBXFileReference; includeInIndex = 1; name = MPCountdownTimer.html; path = MoPubSDK/Resources/MPCountdownTimer.html; sourceTree = "<group>"; };
+		DB3E70DEF42913C4AB0082C16DA94E48 /* MPCountdownTimer.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = MPCountdownTimer.html; path = MoPubSDK/Resources/MPCountdownTimer.html; sourceTree = "<group>"; };
 		DB4BA690CF8E472408A92C30005D59A0 /* MPAdView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPAdView.m; path = MoPubSDK/MPAdView.m; sourceTree = "<group>"; };
 		DC103A411E868526AD318747965607A0 /* MPNativeAdRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPNativeAdRenderer.h; path = "MoPubSDK/Native Ads/MPNativeAdRenderer.h"; sourceTree = "<group>"; };
 		DCA0E1EECA7563512E8E7FA1851D4C93 /* Pods-ios-sdk-demo-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ios-sdk-demo-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		DCE3E1FE9415D39D37046F2BF6A90A6C /* MRNativeCommandHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRNativeCommandHandler.h; path = MoPubSDK/Internal/MRAID/MRNativeCommandHandler.h; sourceTree = "<group>"; };
 		DCF40ED6BA6F9DDB4DB5CB595C936413 /* MPMutedBtn@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "MPMutedBtn@2x.png"; path = "MoPubSDK/Resources/MPMutedBtn@2x.png"; sourceTree = "<group>"; };
 		DDD440EE145A376C62E11227C908B96C /* MPAPIEndpoints.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPAPIEndpoints.m; path = MoPubSDK/Internal/Common/MPAPIEndpoints.m; sourceTree = "<group>"; };
-		DDF49EFB98192FD66CD89CE74C2F19AB /* Pods-ios-sdk-demo-swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ios-sdk-demo-swift.modulemap"; sourceTree = "<group>"; };
+		DDF49EFB98192FD66CD89CE74C2F19AB /* Pods-ios-sdk-demo-swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ios-sdk-demo-swift.modulemap"; sourceTree = "<group>"; };
 		DE0BDC1E197C5A65B812BE39A19B8EE0 /* MPInterstitialCustomEventDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPInterstitialCustomEventDelegate.h; path = MoPubSDK/MPInterstitialCustomEventDelegate.h; sourceTree = "<group>"; };
 		E0E5E6963C0CC290CD2F31CFAD803A0D /* VAAdSplash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VAAdSplash.h; path = VMFiveAdNetwork/VMFiveAdNetwork/VAAdSplash.h; sourceTree = "<group>"; };
 		E1E6F5355F7B48A6B5C13E30A36560DB /* MPPrivateInterstitialCustomEventDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPPrivateInterstitialCustomEventDelegate.h; path = MoPubSDK/Internal/Interstitials/MPPrivateInterstitialCustomEventDelegate.h; sourceTree = "<group>"; };
@@ -801,7 +801,7 @@
 		ED5E202AED4434C4C8078325597B8769 /* MPMRAIDInterstitialCustomEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPMRAIDInterstitialCustomEvent.h; path = MoPubSDK/Internal/MRAID/MPMRAIDInterstitialCustomEvent.h; sourceTree = "<group>"; };
 		EE00D05B6FA0C2A2F4A8DF29A42A0FC3 /* MOPUBAVPlayerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MOPUBAVPlayerView.h; path = MoPubSDK/NativeVideo/Internal/MOPUBAVPlayerView.h; sourceTree = "<group>"; };
 		EE2B7F1B2431A83429196121CCFD3D73 /* MPServerAdPositioning.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPServerAdPositioning.m; path = "MoPubSDK/Native Ads/MPServerAdPositioning.m"; sourceTree = "<group>"; };
-		EE5D3B2BB76AEA70D0AA9822C4CAE2F7 /* Pods_ios_sdk_demo_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ios_sdk_demo_swift.framework; path = "Pods-ios-sdk-demo-swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE5D3B2BB76AEA70D0AA9822C4CAE2F7 /* Pods_ios_sdk_demo_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_sdk_demo_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE6AFB602C3489144C31F9315C3BDB64 /* MPStaticNativeAdRendererSettings.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPStaticNativeAdRendererSettings.m; path = "MoPubSDK/Native Ads/MPStaticNativeAdRendererSettings.m"; sourceTree = "<group>"; };
 		EFE14074D547078535E5EC98ED92B777 /* MRCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRCommand.h; path = MoPubSDK/Internal/MRAID/MRCommand.h; sourceTree = "<group>"; };
 		F0070D9DFABA31296D11400449E9A459 /* MPStreamAdPlacer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPStreamAdPlacer.h; path = "MoPubSDK/Native Ads/MPStreamAdPlacer.h"; sourceTree = "<group>"; };
@@ -881,7 +881,6 @@
 				BDF372FEEB02A81D577AEF95B83FC9E3 /* MoPubSDK */,
 				12079F04DF7239B987F7627113898BFE /* Support Files */,
 			);
-			name = "mopub-ios-sdk";
 			path = "mopub-ios-sdk";
 			sourceTree = "<group>";
 		};
@@ -975,7 +974,6 @@
 				211D27A330A87B7C92A6E093C134FCDD /* VMFiveAdNetwork.h */,
 				6BCF09EEB069DFFC35A8609F14F09564 /* Frameworks */,
 			);
-			name = VMFiveAdNetwork;
 			path = VMFiveAdNetwork;
 			sourceTree = "<group>";
 		};
@@ -984,7 +982,6 @@
 			children = (
 				46F254A3091E34A8E56B185182F07754 /* Frameworks */,
 			);
-			name = GoogleMobileAds;
 			path = GoogleMobileAds;
 			sourceTree = "<group>";
 		};
@@ -1428,7 +1425,6 @@
 				E5E0D3F04BA9E9A22953291DE1B65954 /* SCORVCE.h */,
 				40E824F863DF439B935877B6EC68FF61 /* Frameworks */,
 			);
-			name = ComScore;
 			path = ComScore;
 			sourceTree = "<group>";
 		};
@@ -1676,7 +1672,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0900;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1924,7 +1920,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1932,15 +1930,21 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
@@ -2074,7 +2078,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -2082,14 +2088,20 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",

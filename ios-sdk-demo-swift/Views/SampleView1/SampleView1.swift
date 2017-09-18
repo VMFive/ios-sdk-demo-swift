@@ -33,17 +33,6 @@ extension SampleView1: VANativeAdViewRenderProtocol {
     
 }
 
-// MARK: KVO
-extension SampleView1 {
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if let safeChange = change, let newValue = safeChange[.newKey] as? String, keyPath == "ctaLabel.text" {
-            self.ctaButton.setTitle(newValue, for: .normal)
-        }
-    }
-    
-}
-
 // MARK: Life Cycle
 class SampleView1: UIView {
     
@@ -51,15 +40,16 @@ class SampleView1: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ctaButton: UIButton!
     
-    let ctaLabel = UILabel()
+    @objc dynamic let ctaLabel = UILabel()
+    var observer: NSKeyValueObservation?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.addObserver(self, forKeyPath: "ctaLabel.text", options: .new, context: nil)
-    }
-    
-    deinit {
-        self.removeObserver(self, forKeyPath: "ctaLabel.text", context: nil)
+        self.observer = self.ctaLabel.observe(\.text, options: [.new]) { [weak self] (_, change) in
+            if let safeSelf = self, let newValue = change.newValue {
+                safeSelf.ctaButton.setTitle(newValue, for: .normal)
+            }
+        }
     }
     
 }

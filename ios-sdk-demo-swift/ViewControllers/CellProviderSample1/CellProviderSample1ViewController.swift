@@ -128,8 +128,8 @@ extension CellProviderSample1ViewController: UITableViewDataSource {
                                     return
                                 }
                                 
-                                if error != nil {
-                                    print("Error : \(error)")
+                                if let safeError = error {
+                                    print("Error : \(safeError)")
                                 }
                                 else if let safeData = data {
                                     safeSelf.imageCache.setObject(safeData as NSData, forKey: safeImageName as NSString)
@@ -240,8 +240,8 @@ extension CellProviderSample1ViewController {
                     return
                 }
                 
-                if error != nil {
-                    print("Error : \(error)")
+                if let safeError = error {
+                    print("Error : \(safeError)")
                 }
                 else {
                     if

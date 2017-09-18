@@ -95,20 +95,21 @@ class SampleView3: UIView {
     var titleLabel: UILabel?
     var ctaButton: UIButton?
     
-    let ctaLabel = UILabel()
+    @objc dynamic let ctaLabel = UILabel()
+    var observer: NSKeyValueObservation?
     
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 320, height: 210))
         self.defaultLayout()
-        self.addObserver(self, forKeyPath: "ctaLabel.text", options: .new, context: nil)
+        self.observer = self.ctaLabel.observe(\.text, options: [.new]) { [weak self] (_, change) in
+            if let safeSelf = self, let safeButton = safeSelf.ctaButton, let newValue = change.newValue {
+                safeButton.setTitle(newValue, for: .normal)
+            }
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    deinit {
-        self.removeObserver(self, forKeyPath: "ctaLabel.text", context: nil)
     }
 
 }

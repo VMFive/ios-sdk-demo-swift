@@ -13,7 +13,7 @@ extension NativeAdSample6ViewController: VANativeAdDelegate {
     
     func nativeAdDidLoad(_ nativeAd: VANativeAd) {
         var render: VANativeAdViewRender
-        if let safeAdView = self.adView {
+        if let safeAdView = self.adView as? UIView & VANativeAdViewRenderProtocol {
             render = VANativeAdViewRender(nativeAd: nativeAd, customAdView: safeAdView)
         }
         else {
