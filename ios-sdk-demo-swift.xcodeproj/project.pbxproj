@@ -101,6 +101,7 @@
 		1C5C68B31D2B46B400E1ED0B /* PetImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PetImageTableViewCell.xib; sourceTree = "<group>"; };
 		1C5C68B61D2B478300E1ED0B /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		1C5C68B71D2B478300E1ED0B /* NoteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
+		1C7486091F6F718E009B4806 /* VMFiveSplashCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMFiveSplashCustomEvent.h; sourceTree = "<group>"; };
 		1C78968E1CFC2C31003780D6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1C78968F1CFC2C31003780D6 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		1C7896921CFC2F4E003780D6 /* DemoList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DemoList.plist; sourceTree = "<group>"; };
@@ -479,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				1CF68E091D1BCEFE00D8B325 /* VMFiveInterstitialCustomEvent.h */,
+				1C7486091F6F718E009B4806 /* VMFiveSplashCustomEvent.h */,
 				1CF68E0A1D1BCEFE00D8B325 /* VMFiveNativeVideoAdAdapter.h */,
 				1CF68E0B1D1BCEFE00D8B325 /* VMFiveNativeVideoCustomEvent.h */,
 			);

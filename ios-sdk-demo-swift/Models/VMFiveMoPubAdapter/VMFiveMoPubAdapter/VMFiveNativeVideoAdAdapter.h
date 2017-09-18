@@ -6,7 +6,7 @@
 //  Copyright © 2015 MoPub. All rights reserved.
 //
 
-@import MoPub;
+#import "MPNativeAdAdapter.h"
 
 @class VANativeAd;
 @interface VMFiveNativeVideoAdAdapter : NSObject <MPNativeAdAdapter>
