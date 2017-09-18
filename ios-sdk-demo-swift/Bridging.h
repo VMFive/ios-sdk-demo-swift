@@ -7,6 +7,7 @@
 //
 
 #import <VMFiveAdNetwork/VMFiveAdNetwork.h>
+#import <VMFiveAdNetwork/VAAdSplash.h>
 @import MoPub;
 #import "NewController.h"
 #import "VANativeAd+FullscreenIcon.h"

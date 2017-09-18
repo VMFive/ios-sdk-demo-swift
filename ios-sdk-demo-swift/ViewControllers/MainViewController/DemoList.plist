@@ -106,6 +106,12 @@
 			</dict>
 			<dict>
 				<key>rowText</key>
+				<string>SplashSample</string>
+				<key>action</key>
+				<string>SplashSampleViewController</string>
+			</dict>
+			<dict>
+				<key>rowText</key>
 				<string>RewardedVideoSample</string>
 				<key>action</key>
 				<string>RewardedVideoSampleViewController</string>
@@ -141,6 +147,12 @@
 				<string>InterstitialSample</string>
 				<key>action</key>
 				<string>MoPubInterstitialSampleViewController</string>
+			</dict>
+			<dict>
+				<key>rowText</key>
+				<string>SplashSample</string>
+				<key>action</key>
+				<string>MoPubSplashSampleViewController</string>
 			</dict>
 			<dict>
 				<key>rowText</key>
