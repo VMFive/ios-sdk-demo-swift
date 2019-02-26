@@ -845,7 +845,7 @@
 					"$(PROJECT_DIR)/ios-sdk-demo-swift/Models/VMFiveAdMobAdapter",
 					"$(PROJECT_DIR)/ios-sdk-demo-swift/Models/VMFiveMoPubAdapter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tw.daidouji.ios-sdk-demo-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vm5.adnsdkdemo.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ios-sdk-demo-swift/Bridging.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -867,7 +867,7 @@
 					"$(PROJECT_DIR)/ios-sdk-demo-swift/Models/VMFiveAdMobAdapter",
 					"$(PROJECT_DIR)/ios-sdk-demo-swift/Models/VMFiveMoPubAdapter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tw.daidouji.ios-sdk-demo-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vm5.adnsdkdemo.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ios-sdk-demo-swift/Bridging.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
